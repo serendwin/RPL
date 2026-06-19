@@ -3,7 +3,7 @@ package com.rpl.dosen;
 public class Soal {
     private int idSoal;
     private String pertanyaan;
-    private String pilihan; // contoh: "A. ... | B. ... | C. ... | D. ..."
+    private String pilihan; 
     private String jawabanBenar;
     private int idTest;
 

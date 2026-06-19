@@ -1,6 +1,5 @@
 package com.rpl;
 
-import com.rpl.User;
 import com.rpl.lembaga.Kelas;
 import com.rpl.lembaga.Sertifikat;
 import com.rpl.dosen.Materi;
@@ -23,12 +22,12 @@ public class App {
         // DATA MASTER (Sudah Terdaftar Otomatis di Sistem)
         // -----------------------------------------------------------------
         // Data Dosen
-        User dosen1 = new User(201, "Dr. Irwan", "irwan@univ.ac.id", "dosen321", "dosen");
+        User dosen1 = new User(201, "Dr. Kornelius Sulistyo, S.Kom", "Kortyo@univ.ac.id", "dosen321", "dosen");
         User dosen2 = new User(202, "Miss Sarah, M.Pd", "sarah@univ.ac.id", "dosen654", "dosen");
 
-        // Data Pilihan Kelas
-        Kelas kelasToefl = new Kelas(1, "TOEFL Preparation Class", dosen1.getIdUser());
-        Kelas kelasIelts = new Kelas(2, "IELTS Masterclass", dosen2.getIdUser());
+        // Data Pilihan Kelas (Bahasa China & English)
+        Kelas kelasRpl = new Kelas(1, "Kelas Bahasa China", dosen1.getIdUser());
+        Kelas kelasIelts = new Kelas(2, "English Class", dosen2.getIdUser());
 
         System.out.println("==================================================");
         System.out.println("   SIMULASI SISTEM MANAGEMENT PEMBELAJARAN (RPL)  ");
@@ -38,10 +37,17 @@ public class App {
         // 1. INPUT IDENTITAS MAHASISWA & REGISTRASI
         // -----------------------------------------------------------------
         System.out.println("--- [1] Registrasi Identitas Mahasiswa ---");
-        System.out.print("Masukkan Nama Anda  : ");
+        System.out.print("Masukkan Nama Anda : ");
         String namaMhs = input.nextLine();
+        if (namaMhs.trim().isEmpty()) {
+            namaMhs = "Delsyad Iza";
+        }
+        
         System.out.print("Masukkan Email Anda : ");
         String emailMhs = input.nextLine();
+        if (emailMhs.trim().isEmpty()) {
+            emailMhs = "delsyad@univ.ac.id";
+        }
         
         User mhs = new User();
         mhs.setIdUser(101);
@@ -51,40 +57,41 @@ public class App {
         // -----------------------------------------------------------------
         // 2. PILIHAN KELAS (DIPILIH OLEH MAHASISWA)
         // -----------------------------------------------------------------
-        System.out.println("--- [2] Pendaftaran Kelas Bahasa ---");
+        System.out.println("--- [2] Pendaftaran Kelas Kuliah ---");
         System.out.println("Daftar Kelas yang Tersedia:");
-        System.out.println("1. " + kelasToefl.getNamaKelas() + " (Pengajar ID: " + kelasToefl.getIdPengajar() + ")");
+        System.out.println("1. " + kelasRpl.getNamaKelas() + " (Pengajar ID: " + kelasRpl.getIdPengajar() + ")");
         System.out.println("2. " + kelasIelts.getNamaKelas() + " (Pengajar ID: " + kelasIelts.getIdPengajar() + ")");
         System.out.print("Pilih nomor kelas yang ingin diikuti (1/2): ");
         int pilihan = input.nextInt();
-        input.nextLine(); // Membersihkan sisa baris baru/enter dari input.nextInt()
+        input.nextLine(); // Membersihkan sisa baris baru/enter
 
         // Variabel penampung untuk kelas dan dosen terpilih
         Kelas kelasTerpilih = null;
         User dosenTerpilih = null;
 
-        // Logika IF untuk menentukan kelas & dosen otomatis berdasarkan pilihan
         if (pilihan == 1) {
-            kelasTerpilih = kelasToefl;
+            kelasTerpilih = kelasRpl;
             dosenTerpilih = dosen1;
         } else if (pilihan == 2) {
             kelasTerpilih = kelasIelts;
             dosenTerpilih = dosen2;
         } else {
-            System.out.println("[Error] Pilihan tidak valid! Otomatis dialihkan ke Kelas TOEFL.");
-            kelasTerpilih = kelasToefl;
+            System.out.println("[Error] Pilihan tidak valid! Otomatis dialihkan ke Kelas Bahasa China.");
+            kelasTerpilih = kelasRpl;
             dosenTerpilih = dosen1;
         }
 
-        // Tampilkan data otomatis yang keluar setelah memilih
         System.out.println("\n>> ANDA BERHASIL MEMILIH KELAS BERSAMA DOSEN:");
         System.out.println("   Nama Kelas   : " + kelasTerpilih.getNamaKelas());
         System.out.println("   Nama Pengajar: " + dosenTerpilih.getNamaUser());
         System.out.println("   Email Dosen  : " + dosenTerpilih.getEmail());
         System.out.println("--------------------------------------------------\n");
 
-        // Memulai kelas yang terpilih
         kelasTerpilih.mulai_kelas();
+        
+        System.out.println(">> Aktivitas di Dalam Kelas:");
+        kelasTerpilih.lihatmateri();   
+        kelasTerpilih.lihatpeserta();  
 
         // -----------------------------------------------------------------
         // 3. PROSES ENROLLMENT KELAS TERPILIH
@@ -97,24 +104,44 @@ public class App {
         System.out.println();
 
         // -----------------------------------------------------------------
-        // 4. DOSEN MEMBUAT MATERI & TES (Otomatis Mengikuti Kelas Terpilih)
+        // 4. DOSEN MEMBUAT MATERI & TES
         // -----------------------------------------------------------------
         System.out.println("--- [4] Pembuatan Ujian/Tes oleh Dosen Terpilih ---");
         Materi materi1 = new Materi();
         materi1.setIdMateri(501);
-        materi1.tambahMateri("Introduction Session", "Materi pengenalan dasar kelas bahasa.", kelasTerpilih.getIdKelas(), dosenTerpilih.getIdUser());
-
+        
         Tes uasListening = new Tes();
         uasListening.setIdTest(701);
-        uasListening.buatTes("UAS Listening 101", LocalDate.now(), kelasTerpilih.getIdKelas());
-
+        
         Soal soal1 = new Soal();
-        soal1.setIdSoal(901);
-        soal1.tambahSoal("What does the man imply?", "A. Go home | B. Stay at office", "A", uasListening.getIdTest());
-
         Soal soal2 = new Soal();
-        soal2.setIdSoal(902);
-        soal2.tambahSoal("Where does the conversation take place?", "A. Hospital | B. Airport", "B", uasListening.getIdTest());
+
+        // Kondisi materi kuis dinamis berdasarkan kelas yang kamu pilih
+        if (kelasTerpilih.getIdKelas() == 1) {
+            materi1.tambahMateri("Basic Hanyu Pinyin", "Materi pengenalan nada dan ejaan Bahasa China.", kelasTerpilih.getIdKelas(), dosenTerpilih.getIdUser());
+            materi1.lihatMateri();
+            System.out.println();
+
+            uasListening.buatTes("UAS Hanyu Listening 101", LocalDate.now(), kelasTerpilih.getIdKelas());
+
+            soal1.setIdSoal(901);
+            soal1.tambahSoal("Apa arti dari kata 'Ni Hao' (你好)?", "A. Terima Kasih | B. Halo", "B", uasListening.getIdTest());
+
+            soal2.setIdSoal(902);
+            soal2.tambahSoal("Bagaimana cara membaca angka 1 dalam pinyin?", "A. Yi | B. Er", "A", uasListening.getIdTest());
+        } else {
+            materi1.tambahMateri("Basic English Grammar", "Materi pembelajaran Tenses dasar.", kelasTerpilih.getIdKelas(), dosenTerpilih.getIdUser());
+            materi1.lihatMateri();
+            System.out.println();
+
+            uasListening.buatTes("UAS English Listening 101", LocalDate.now(), kelasTerpilih.getIdKelas());
+
+            soal1.setIdSoal(901);
+            soal1.tambahSoal("Which one is a verb?", "A. Run | B. Beautiful", "A", uasListening.getIdTest());
+
+            soal2.setIdSoal(902);
+            soal2.tambahSoal("What is the past tense of 'Go'?", "A. Gone | B. Went", "B", uasListening.getIdTest());
+        }
 
         uasListening.mulaiTes();
         System.out.println();
@@ -127,6 +154,7 @@ public class App {
         System.out.print("Jawaban Anda (A/B): ");
         String jawab1 = input.nextLine().toUpperCase();
 
+        // Di sini kata "Jawaban" sudah bersih dan normal kembali
         Jawaban jwb1 = new Jawaban();
         jwb1.setIdJawaban(11);
         jwb1.setIdUser(mhs.getIdUser());

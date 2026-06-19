@@ -3,10 +3,6 @@ package com.rpl.mahasiswa;
 import java.time.LocalDateTime;
 import com.rpl.dosen.Soal;
 
-/**
- * Class Jawaban
- * Jawaban seorang User (mahasiswa) terhadap sebuah Soal.
- */
 public class Jawaban {
     private int idJawaban;
     private int idUser;
