@@ -150,8 +150,11 @@ public class App {
         // 5. MAHASISWA MENGERJAKAN TES
         // -----------------------------------------------------------------
         System.out.println("--- [5] Mahasiswa Mengerjakan Ujian ---");
+
         System.out.println("Soal 1: " + soal1.getPertanyaan());
+        System.out.println(soal1.getPilihan().replace(" | ", "\n"));
         System.out.print("Jawaban Anda (A/B): ");
+
         String jawab1 = input.nextLine().toUpperCase();
 
         // Di sini kata "Jawaban" sudah bersih dan normal kembali
@@ -163,6 +166,7 @@ public class App {
         jwb1.periksaJawaban(soal1);
 
         System.out.println("\nSoal 2: " + soal2.getPertanyaan());
+        System.out.println(soal2.getPilihan().replace(" | ", "\n"));
         System.out.print("Jawaban Anda (A/B): ");
         String jawab2 = input.nextLine().toUpperCase();
 

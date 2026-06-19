@@ -2,7 +2,6 @@ package com.rpl.mahasiswa;
 
 import java.time.LocalDate;
 
-
 public class Enrollment {
     private int idEnroll;
     private int idUser;
