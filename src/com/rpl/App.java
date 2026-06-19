@@ -1,6 +1,189 @@
 package com.rpl;
+
+import com.rpl.User;
+import com.rpl.lembaga.Kelas;
+import com.rpl.lembaga.Sertifikat;
+import com.rpl.dosen.Materi;
+import com.rpl.dosen.Tes;
+import com.rpl.dosen.Soal;
+import com.rpl.mahasiswa.Enrollment;
+import com.rpl.mahasiswa.Jawaban;
+import com.rpl.mahasiswa.Nilai;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class App {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // -----------------------------------------------------------------
+        // DATA MASTER (Sudah Terdaftar Otomatis di Sistem)
+        // -----------------------------------------------------------------
+        // Data Dosen
+        User dosen1 = new User(201, "Dr. Irwan", "irwan@univ.ac.id", "dosen321", "dosen");
+        User dosen2 = new User(202, "Miss Sarah, M.Pd", "sarah@univ.ac.id", "dosen654", "dosen");
+
+        // Data Pilihan Kelas
+        Kelas kelasToefl = new Kelas(1, "TOEFL Preparation Class", dosen1.getIdUser());
+        Kelas kelasIelts = new Kelas(2, "IELTS Masterclass", dosen2.getIdUser());
+
+        System.out.println("==================================================");
+        System.out.println("   SIMULASI SISTEM MANAGEMENT PEMBELAJARAN (RPL)  ");
+        System.out.println("==================================================\n");
+
+        // -----------------------------------------------------------------
+        // 1. INPUT IDENTITAS MAHASISWA & REGISTRASI
+        // -----------------------------------------------------------------
+        System.out.println("--- [1] Registrasi Identitas Mahasiswa ---");
+        System.out.print("Masukkan Nama Anda  : ");
+        String namaMhs = input.nextLine();
+        System.out.print("Masukkan Email Anda : ");
+        String emailMhs = input.nextLine();
+        
+        User mhs = new User();
+        mhs.setIdUser(101);
+        mhs.daftar(namaMhs, emailMhs, "rahasia123", "mahasiswa");
+        System.out.println();
+
+        // -----------------------------------------------------------------
+        // 2. PILIHAN KELAS (DIPILIH OLEH MAHASISWA)
+        // -----------------------------------------------------------------
+        System.out.println("--- [2] Pendaftaran Kelas Bahasa ---");
+        System.out.println("Daftar Kelas yang Tersedia:");
+        System.out.println("1. " + kelasToefl.getNamaKelas() + " (Pengajar ID: " + kelasToefl.getIdPengajar() + ")");
+        System.out.println("2. " + kelasIelts.getNamaKelas() + " (Pengajar ID: " + kelasIelts.getIdPengajar() + ")");
+        System.out.print("Pilih nomor kelas yang ingin diikuti (1/2): ");
+        int pilihan = input.nextInt();
+        input.nextLine(); // Membersihkan sisa baris baru/enter dari input.nextInt()
+
+        // Variabel penampung untuk kelas dan dosen terpilih
+        Kelas kelasTerpilih = null;
+        User dosenTerpilih = null;
+
+        // Logika IF untuk menentukan kelas & dosen otomatis berdasarkan pilihan
+        if (pilihan == 1) {
+            kelasTerpilih = kelasToefl;
+            dosenTerpilih = dosen1;
+        } else if (pilihan == 2) {
+            kelasTerpilih = kelasIelts;
+            dosenTerpilih = dosen2;
+        } else {
+            System.out.println("[Error] Pilihan tidak valid! Otomatis dialihkan ke Kelas TOEFL.");
+            kelasTerpilih = kelasToefl;
+            dosenTerpilih = dosen1;
+        }
+
+        // Tampilkan data otomatis yang keluar setelah memilih
+        System.out.println("\n>> ANDA BERHASIL MEMILIH KELAS BERSAMA DOSEN:");
+        System.out.println("   Nama Kelas   : " + kelasTerpilih.getNamaKelas());
+        System.out.println("   Nama Pengajar: " + dosenTerpilih.getNamaUser());
+        System.out.println("   Email Dosen  : " + dosenTerpilih.getEmail());
+        System.out.println("--------------------------------------------------\n");
+
+        // Memulai kelas yang terpilih
+        kelasTerpilih.mulai_kelas();
+
+        // -----------------------------------------------------------------
+        // 3. PROSES ENROLLMENT KELAS TERPILIH
+        // -----------------------------------------------------------------
+        System.out.println("\n--- [3] Proses Pendaftaran Kelas (Enrollment) ---");
+        Enrollment enrollBudi = new Enrollment();
+        enrollBudi.setIdEnroll(8801);
+        enrollBudi.daftar(mhs.getIdUser(), kelasTerpilih.getIdKelas());
+        enrollBudi.validasiPendaftaran(); 
+        System.out.println();
+
+        // -----------------------------------------------------------------
+        // 4. DOSEN MEMBUAT MATERI & TES (Otomatis Mengikuti Kelas Terpilih)
+        // -----------------------------------------------------------------
+        System.out.println("--- [4] Pembuatan Ujian/Tes oleh Dosen Terpilih ---");
+        Materi materi1 = new Materi();
+        materi1.setIdMateri(501);
+        materi1.tambahMateri("Introduction Session", "Materi pengenalan dasar kelas bahasa.", kelasTerpilih.getIdKelas(), dosenTerpilih.getIdUser());
+
+        Tes uasListening = new Tes();
+        uasListening.setIdTest(701);
+        uasListening.buatTes("UAS Listening 101", LocalDate.now(), kelasTerpilih.getIdKelas());
+
+        Soal soal1 = new Soal();
+        soal1.setIdSoal(901);
+        soal1.tambahSoal("What does the man imply?", "A. Go home | B. Stay at office", "A", uasListening.getIdTest());
+
+        Soal soal2 = new Soal();
+        soal2.setIdSoal(902);
+        soal2.tambahSoal("Where does the conversation take place?", "A. Hospital | B. Airport", "B", uasListening.getIdTest());
+
+        uasListening.mulaiTes();
+        System.out.println();
+
+        // -----------------------------------------------------------------
+        // 5. MAHASISWA MENGERJAKAN TES
+        // -----------------------------------------------------------------
+        System.out.println("--- [5] Mahasiswa Mengerjakan Ujian ---");
+        System.out.println("Soal 1: " + soal1.getPertanyaan());
+        System.out.print("Jawaban Anda (A/B): ");
+        String jawab1 = input.nextLine().toUpperCase();
+
+        Jawaban jwb1 = new Jawaban();
+        jwb1.setIdJawaban(11);
+        jwb1.setIdUser(mhs.getIdUser());
+        jwb1.setIdSoal(soal1.getIdSoal());
+        jwb1.simpanJawaban(jawab1);
+        jwb1.periksaJawaban(soal1);
+
+        System.out.println("\nSoal 2: " + soal2.getPertanyaan());
+        System.out.print("Jawaban Anda (A/B): ");
+        String jawab2 = input.nextLine().toUpperCase();
+
+        Jawaban jwb2 = new Jawaban();
+        jwb2.setIdJawaban(12);
+        jwb2.setIdUser(mhs.getIdUser());
+        jwb2.setIdSoal(soal2.getIdSoal());
+        jwb2.simpanJawaban(jawab2);
+        jwb2.periksaJawaban(soal2);
+
+        uasListening.tutupTes();
+        System.out.println();
+
+        // -----------------------------------------------------------------
+        // 6. PENILAIAN HASIL UJIAN
+        // -----------------------------------------------------------------
+        System.out.println("--- [6] Perhitungan Nilai Ujian ---");
+        List<Jawaban> listJawabanBudi = new ArrayList<>();
+        listJawabanBudi.add(jwb1);
+        listJawabanBudi.add(jwb2);
+
+        Nilai nilaiUasBudi = new Nilai(401, mhs.getIdUser(), uasListening.getIdTest());
+        nilaiUasBudi.hitungNilai(listJawabanBudi);
+        nilaiUasBudi.lihatNilai();
+        System.out.println();
+
+        // -----------------------------------------------------------------
+        // 7. PENERBITAN SERTIFIKAT
+        // -----------------------------------------------------------------
+        System.out.println("--- [7] Rekapitulasi & Kelulusan (Sertifikat) ---");
+        enrollBudi.selesaikan();
+
+        List<Nilai> seluruhNilaiBudi = new ArrayList<>();
+        seluruhNilaiBudi.add(nilaiUasBudi);
+
+        Sertifikat sertifikatBudi = new Sertifikat(9901, mhs.getIdUser(), kelasTerpilih.getIdKelas());
+        sertifikatBudi.hitungNilai(seluruhNilaiBudi);
+        sertifikatBudi.lihatNilai();
+        System.out.println();
+
+        // -----------------------------------------------------------------
+        // 8. LOGOUT LOG
+        // -----------------------------------------------------------------
+        System.out.println("--- [8] Akhir Sesi ---");
+        mhs.logout();
+        System.out.println("\n==================================================");
+        System.out.println("            SIMULASI SELESAI DIJALANKAN           ");
+        System.out.println("==================================================");
+        
+        input.close();
     }
 }
