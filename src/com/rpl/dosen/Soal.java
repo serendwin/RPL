@@ -27,6 +27,27 @@ public class Soal extends Dosen
         this.idTes = idTes;
     }
 
+    // Getter
+    public int getIdSoal() {
+        return idSoal;
+    }
+
+    public String getPertanyaan() {
+        return pertanyaan;
+    }
+
+    public String getPilihan() {
+        return pilihan;
+    }
+
+    public String getJawabanBenar() {
+        return jawabanBenar;
+    }
+
+    public int getIdTes() {
+        return idTes;
+    }
+
     public void tambahSoal() {
         System.out.println("===========================================================");
         System.out.println("                  SOAL BERHASIL DITAMBAH");
