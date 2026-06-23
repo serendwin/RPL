@@ -36,6 +36,8 @@ public class Materi extends Dosen
         System.out.println("===========================================================");
         System.out.println("Judul Materi : " + judul);
         System.out.println("ID Materi    : " + idMateri);
+        System.out.println("ID Kelas     : " + idKelas);
+        System.out.println("ID Pengajar  : " + idPengajar);
         System.out.println("===========================================================");
         System.out.println();
     }
@@ -47,6 +49,8 @@ public class Materi extends Dosen
         System.out.println("===========================================================");
         System.out.println("Judul Materi : " + judul);
         System.out.println("ID Materi    : " + idMateri);
+        System.out.println("ID Kelas     : " + idKelas);
+        System.out.println("ID Pengajar  : " + idPengajar);
         System.out.println("Status       : Data materi telah diperbarui");
         System.out.println("===========================================================");
         System.out.println();
@@ -59,6 +63,8 @@ public class Materi extends Dosen
         System.out.println("===========================================================");
         System.out.println("Judul Materi : " + judul);
         System.out.println("ID Materi    : " + idMateri);
+        System.out.println("ID Kelas     : " + idKelas);
+        System.out.println("ID Pengajar  : " + idPengajar);
         System.out.println("Status       : Materi telah dihapus");
         System.out.println("===========================================================");
         System.out.println();
@@ -70,6 +76,8 @@ public class Materi extends Dosen
         System.out.println("===========================================================");
         System.out.println("Judul      : " + judul);
         System.out.println("Isi Materi : " + isiMateri);
+        System.out.println("ID Kelas   : " + idKelas);
+        System.out.println("ID Pengajar: " + idPengajar);
         System.out.println("===========================================================");
     }
 }
