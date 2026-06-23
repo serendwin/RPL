@@ -1,5 +1,4 @@
 package com.rpl.dosen;
-import com.rpl.dosen.Dosen;
 
 public class Materi extends Dosen 
 {
