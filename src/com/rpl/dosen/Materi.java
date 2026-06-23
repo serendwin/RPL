@@ -1,6 +1,8 @@
 package com.rpl.dosen;
+import com.rpl.dosen.Dosen;
 
-public class Materi {
+public class Materi extends Dosen 
+{
 
     private int idMateri;
     private String judul;
@@ -8,11 +10,18 @@ public class Materi {
     private int idKelas;
     private int idPengajar;
 
-    public Materi(int idMateri,
+    public Materi(int id_user,
+                  String namaUser,
+                  String email,
+                  String password,
+                  int idMateri,
                   String judul,
                   String isiMateri,
                   int idKelas,
-                  int idPengajar) {
+                  int idPengajar) 
+    {
+
+        super(id_user, namaUser, email, password);
 
         this.idMateri = idMateri;
         this.judul = judul;
@@ -21,20 +30,47 @@ public class Materi {
         this.idPengajar = idPengajar;
     }
 
-    public void tambahMateri() {
-        System.out.println("Materi ditambah");
+    public void tambahMateri() 
+    {
+        System.out.println("===========================================================");
+        System.out.println("                 MATERI BERHASIL DITAMBAH");
+        System.out.println("===========================================================");
+        System.out.println("Judul Materi : " + judul);
+        System.out.println("ID Materi    : " + idMateri);
+        System.out.println("===========================================================");
+        System.out.println();
     }
 
-    public void editMateri() {
-        System.out.println("Materi diedit");
+    public void editMateri() 
+    {
+        System.out.println("===========================================================");
+        System.out.println("                 MATERI BERHASIL DIEDIT");
+        System.out.println("===========================================================");
+        System.out.println("Judul Materi : " + judul);
+        System.out.println("ID Materi    : " + idMateri);
+        System.out.println("Status       : Data materi telah diperbarui");
+        System.out.println("===========================================================");
+        System.out.println();
     }
 
-    public void hapusMateri() {
-        System.out.println("Materi dihapus");
+    public void hapusMateri() 
+    {
+        System.out.println("===========================================================");
+        System.out.println("                 MATERI BERHASIL DIHAPUS");
+        System.out.println("===========================================================");
+        System.out.println("Judul Materi : " + judul);
+        System.out.println("ID Materi    : " + idMateri);
+        System.out.println("Status       : Materi telah dihapus");
+        System.out.println("===========================================================");
+        System.out.println();
     }
 
     public void lihatMateri() {
-        System.out.println(judul);
-        System.out.println(isiMateri);
+        System.out.println("===========================================================");
+        System.out.println("                    DETAIL MATERI");
+        System.out.println("===========================================================");
+        System.out.println("Judul      : " + judul);
+        System.out.println("Isi Materi : " + isiMateri);
+        System.out.println("===========================================================");
     }
 }
