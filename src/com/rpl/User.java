@@ -23,6 +23,11 @@ public class User {
         System.out.println("daftar user");
     }
 
+    public void registrasiberhasil() 
+    {
+        System.out.println("Registrasi berhasil!");
+    }
+    
     public void registrasiinvalid() 
     {
         System.out.println("Registrasi gagal silahkan periksa kembali data yang dimasukkan.");
