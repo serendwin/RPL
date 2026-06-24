@@ -18,6 +18,10 @@ public class Nilai {
         this.skor = skor;
     }
 
+    public float getSkor() {
+        return skor;
+    }
+
     public float hitungNilai() {
         return skor;
     }
