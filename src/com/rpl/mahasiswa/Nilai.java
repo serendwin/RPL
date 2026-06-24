@@ -18,6 +18,18 @@ public class Nilai {
         this.skor = skor;
     }
 
+    public int getIdNilai() {
+        return idNilai;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public int getIdTes() {
+        return idTes;
+    }
+
     public float getSkor() {
         return skor;
     }
