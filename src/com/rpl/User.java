@@ -1,5 +1,7 @@
 package com.rpl;
 
+import java.util.Scanner;
+
 public class User {
 
     protected int id_user;
@@ -7,9 +9,12 @@ public class User {
     protected String email;
     protected String password;
     protected String role;
+    
+    protected Scanner input = new Scanner(System.in);
 
     public User(int idUser, String namaUser, String email,
-                String password, String role) {
+                String password, String role) 
+    {
 
         this.id_user = idUser;
         this.nama_user = namaUser;
@@ -20,7 +25,17 @@ public class User {
 
     public void daftar() 
     {
-        System.out.println("daftar user");
+        System.out.println("===========================================================");
+        System.out.println("                         DAFTAR ");
+        System.out.println("===========================================================");
+        System.out.print("Masukan nama anda        : ");
+        nama_user = input.nextLine();        
+        System.out.print("Masukan email anda       : ");
+        email = input.nextLine();
+        System.out.print("Masukan password anda    : ");
+        password = input.nextLine();  
+        System.out.println("===========================================================");
+        System.out.println();
     }
 
     public void registrasiberhasil() 
@@ -38,18 +53,20 @@ public class User {
         System.out.println("Login berhasil!");
     }
 
-    public void logininvalid(){
+    public void logininvalid()
+    {
         System.out.println("Login gagal: Email atau password salah.");
     }
     
     public void loginakun() 
     {
         System.out.println("===========================================================");
-        System.out.println("                 LOGIN ");
+        System.out.println("                         LOGIN ");
         System.out.println("===========================================================");
-        System.out.println("Masukan nama anda        : " + nama_user);
-        System.out.println("Masukan email anda       : " + email);
-        System.out.println("Masukan password anda    : " + password);
+        System.out.print("Masukan email anda       : ");
+        email = input.nextLine();
+        System.out.print("Masukan password anda    : ");
+        password = input.nextLine();  
         System.out.println("===========================================================");
         System.out.println();
     }

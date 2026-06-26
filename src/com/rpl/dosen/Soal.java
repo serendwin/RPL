@@ -27,27 +27,6 @@ public class Soal extends Dosen
         this.idTes = idTes;
     }
 
-    // Getter
-    public int getIdSoal() {
-        return idSoal;
-    }
-
-    public String getPertanyaan() {
-        return pertanyaan;
-    }
-
-    public String getPilihan() {
-        return pilihan;
-    }
-
-    public String getJawabanBenar() {
-        return jawabanBenar;
-    }
-
-    public int getIdTes() {
-        return idTes;
-    }
-
     public void tambahSoal() {
         System.out.println("===========================================================");
         System.out.println("                  SOAL BERHASIL DITAMBAH");
@@ -82,4 +61,35 @@ public class Soal extends Dosen
         System.out.println("===========================================================");
         System.out.println();
     }
+
+    public void eksekusiUjian(java.util.Scanner input) 
+    {
+        System.out.println("===========================================================");
+        System.out.println("                    MULAI UJIAN MAHASISWA                  ");
+        System.out.println("===========================================================");
+        System.out.println("ID Tes       : " + this.idTes);
+        System.out.println("ID Soal      : " + this.idSoal);
+        System.out.println("-----------------------------------------------------------");
+        System.out.println("Pertanyaan: " + this.pertanyaan);
+        System.out.println();
+        String[] daftarPilihan = this.pilihan.split(",");
+        for (String opsi : daftarPilihan) 
+        {
+            System.out.println("   " + opsi.trim());
+        }    
+        System.out.println("-----------------------------------------------------------");
+        System.out.print("Masukkan Jawaban Anda (A/B/C/D): ");
+        String jawabanUser = input.next();    
+        System.out.println("===========================================================");
+        if (jawabanUser.equalsIgnoreCase(this.jawabanBenar)) {
+            System.out.println("Hasil: JAWABAN ANDA BENAR");
+            System.out.println("Nilai: 100");
+        } else {
+            System.out.println("Hasil: JAWABAN ANDA SALAH");
+            System.out.println("Jawaban yang benar adalah: " + this.jawabanBenar);
+            System.out.println("Nilai: 0");
+        }
+        System.out.println("===========================================================");
+        System.out.println();
+    }    
 }

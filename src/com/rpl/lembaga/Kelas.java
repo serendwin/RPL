@@ -5,17 +5,25 @@ public class Kelas {
     private int idKelas;
     private String namaKelas;
     private int idPengajar;
+    private String tanggalkelas;
+    private String waktukelas;;
 
     public Kelas(int idKelas,
                  String namaKelas,
-                 int idPengajar) {
+                 int idPengajar,
+                 String tanggalkelas,
+                 String waktukelas) 
+    {
 
         this.idKelas = idKelas;
         this.namaKelas = namaKelas;
         this.idPengajar = idPengajar;
+        this.tanggalkelas = tanggalkelas;
+        this.waktukelas = waktukelas;
     }
 
-    public void mulaiKelas() {
+    public void mulaiKelas() 
+    {
         System.out.println("===========================================================");
         System.out.println("                  KELAS TELAH DIMULAI");
         System.out.println("===========================================================");
@@ -27,13 +35,14 @@ public class Kelas {
         System.out.println();
     }
 
-    public void lihatMateri() {
+    public void jadwalkelas() {
         System.out.println("===========================================================");
-        System.out.println("                    DAFTAR MATERI");
+        System.out.println("                    JADWAL KELAS");
         System.out.println("===========================================================");
         System.out.println("ID Kelas     : " + idKelas);
         System.out.println("Nama Kelas   : " + namaKelas);
-        System.out.println("Materi       : Tersedia untuk dipelajari");
+        System.out.println("Tanggal      : " + tanggalkelas);
+        System.out.println("Waktu        : " + waktukelas);
         System.out.println("===========================================================");
         System.out.println();
     }

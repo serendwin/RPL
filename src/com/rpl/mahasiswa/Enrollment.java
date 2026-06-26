@@ -37,7 +37,8 @@ public class Enrollment {
         this.idKelas = idKelas;
     }
 
-    public void daftar() {
+    public void daftar() 
+    {
         System.out.println("Mahasiswa dengan ID " + idUser +
                            " berhasil mendaftar ke kelas " + idKelas);
     }

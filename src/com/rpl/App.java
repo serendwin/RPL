@@ -9,6 +9,7 @@ import com.rpl.dosen.Soal;
 import com.rpl.mahasiswa.Enrollment;
 import com.rpl.mahasiswa.Jawaban;
 import com.rpl.mahasiswa.Nilai;
+import com.rpl.mahasiswa.Mahasiswa;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -288,37 +289,28 @@ public class App
                 31                        
         );        
 
-        Kelas kelasbinggris1 = new Kelas(
+        Kelas kelasbinggris = new Kelas(
                 10,
                 "Pemrograman Berorientasi Objek",
-                101
+                101,
+                "26-06-2026",
+                "08:00 - 10:00"
         );
         
-        Kelas kelasbinggris2 = new Kelas(
-                11,
-                "Pemrograman Berorientasi Objek",
-                101
-        );
-
-        Kelas kelasbjerman1 = new Kelas(
+        Kelas kelasbjerman = new Kelas(
                 20,
                 "Pemrograman Berorientasi Objek",
-                102
+                102,
+                "26-06-2026",
+                "10:00 - 12:00"
         );
-        Kelas kelasbjerman2 = new Kelas(
-                21,
-                "Pemrograman Berorientasi Objek",
-                103
-        );
-        Kelas kelasbchina1 = new Kelas(
+
+        Kelas kelasbchina = new Kelas(
                 30,
                 "Pemrograman Berorientasi Objek",
-                103
-        );
-        Kelas kelasbchina2 = new Kelas(
-                31,
-                "Pemrograman Berorientasi Objek",
-                103
+                103,
+                "26-06-2026",
+                "14:00 - 16:00"
         );
 
         Sertifikat sertifikatbinggris1 = new Sertifikat(
@@ -357,48 +349,119 @@ public class App
                 31    
         );
 
-        Enrollment enrollmentBInggris1 = new Enrollment(
-                1,
+        Enrollment enrollmentbinggris = new Enrollment(
+                41,
                 1,
                 10
         );
 
-        Enrollment enrollmentBInggris2 = new Enrollment(
-                2,
-                202,
-                11
-        );
-
-        Enrollment enrollmentBJerman1 = new Enrollment(
-                3,
-                203,
+        Enrollment enrollmentbjerman = new Enrollment(
+                51,
+                1,
                 20
         );
 
-        Enrollment enrollmentBJerman2 = new Enrollment(
-                4,
-                204,
-                21
-        );
-
-        Enrollment enrollmentBChina1 = new Enrollment(
-                5,
-                205,
+        Enrollment enrollmentbchina = new Enrollment(
+                61,
+                1,
                 30
         );
 
-        Enrollment enrollmentBChina2 = new Enrollment(
-                6,
-                206,
-                31
+        Jawaban jawabanbinggris1 = new Jawaban(
+                71,
+                1,
+                11,
+                "A"
         );
+
+        Jawaban jawabanbinggris2 = new Jawaban(
+                72,
+                1,
+                12,
+                "B"
+        );
+
+        Jawaban jawabanbjerman1 = new Jawaban(
+                81,
+                1,
+                21,
+                "C"
+        );
+
+        Jawaban jawabanbjerman2 = new Jawaban(
+                82,
+                1,
+                22,
+                "D"
+        );
+
+
+        Jawaban jawabanbchina1 = new Jawaban(
+                91,
+                1,
+                31,
+                "A"
+        );
+
+        Jawaban jawabanbchina2 = new Jawaban(
+                92,
+                1,
+                32,
+                "B"
+        );
+
+        Nilai nilaibinggris1 = new Nilai(
+                51,
+                1,
+                10,
+                85
+        );
+
+        Nilai nilaibinggris2 = new Nilai(
+                52,
+                1,
+                11,
+                90
+        );
+
+        Nilai nilaibjerman1 = new Nilai(
+                61,
+                1,
+                20,
+                80
+        );
+
+
+        Nilai nilaibjerman2 = new Nilai(
+                62,
+                1,
+                21,
+                75
+        );
+
+        Nilai nilaibchina1 = new Nilai(
+                71,
+                1,
+                30,
+                95
+        );
+
+        Nilai nilaibchina2 = new Nilai(
+                72,
+                1,
+                31,
+                88
+        );
+
+        Mahasiswa mhs = new Mahasiswa(1, "Joko", "kijokogawlbodo@gmail.ac.id", "66666");
+
         Scanner input = new Scanner(System.in);
 
         System.out.println("______________________________________________________________________");
         System.out.println("=====           Selamat Datang Di Sistem Aku Cinta Bahasa           ====");
         System.out.println("=====             Lembaga Bahasa Universitas Pancasila             ====");
         System.out.println("----------------------------------------------------------------------");
-        System.out.println("Login Sebagai:");
+        System.out.println("Choose your role:");
         System.out.println("----------------------------------------------------------------------");
         System.out.println("1. Mahasiswa");
         System.out.println("2. Pengajar");
@@ -408,60 +471,157 @@ public class App
         System.out.print("Pilih menu : ");
         int menuUtama = input.nextInt();
         System.out.println();
-
-        switch (menuUtama) {
-
+        switch (menuUtama) 
+        {
             case 1:
-                boolean kembaliAktor = false;
-
-                while (!kembaliAktor) {
+                boolean kembalimahasiswa = false;
+                while (!kembalimahasiswa) 
+                {
                     System.out.println("=================================================================");
-                    System.out.println("========================= MENU AKTOR ============================");
+                    System.out.println("========================== MAHASISWA ============================");
                     System.out.println("=================================================================");
-                    System.out.println("1. Lihat Biodata");
-                    System.out.println("2. Info Event dan Pembelian Tiket");
-                    System.out.println("3. Kembali ke Menu Utama");
+                    System.out.println("1. Registrasi Akun");
+                    System.out.println("2. Login Akun");
                     System.out.println("-----------------------------------------------------------------");
                     System.out.print("Pilih Menu : ");
-
-                    int menuAktor = input.nextInt();
+                    int menumahasiswa = input.nextInt();
                     System.out.println();
-
-                    switch (menuAktor) {
+                    switch (menumahasiswa) 
+                    {
                         case 1:
-                            System.out.println("Menampilkan Biodata...");
-                            break;
+                                Mahasiswa.daftar();
+                                Mahasiswa.registrasiberhasil();
+                                break;
 
                         case 2:
-                            System.out.println("Menampilkan Event dan Tiket...");
-                            break;
+                                boolean loginSukses = false;
+                                while (!loginSukses)
+                                {
+                                        Mahasiswa.loginakun();
+                                        Mahasiswa.loginberhasil();
+                                        System.out.println("=================================================================");
+                                        System.out.println("========================== MAHASISWA ============================");
+                                        System.out.println("=================================================================");
+                                        System.out.println("1. Daftar Kelas");
+                                        System.out.println("2. Kelas Saya");
+                                        System.out.println("3. Logout");
+                                        System.out.println("-----------------------------------------------------------------");
+                                        System.out.print("Pilih Menu : ");
+                                        int menumahasiswakelas = input.nextInt();
+                                        System.out.println();
+                                        switch (menumahasiswakelas) 
+                                        {        
+                                        case 1:
+                                                boolean kembalidaftarkelas = false;
+                                                while (!kembalidaftarkelas)
+                                                {
+                                                        System.out.println("=================================================================");
+                                                        System.out.println("=========================  DAFTAR KELAS  ========================");
+                                                        System.out.println("=================================================================");
+                                                        System.out.println("1. Kelas Bahasa Inggris");
+                                                        System.out.println("2. Kelas Bahasa Jerman");
+                                                        System.out.println("3. Kelas Bahasa Cina");
+                                                        System.out.println("4. Kembali");                            
+                                                        System.out.println("-----------------------------------------------------------------");                                
+                                                        System.out.print("Pilih Kelas : ");
+                                                        int menudaftarkelas = input.nextInt();
+                                                        System.out.println();
+                                                        switch (menudaftarkelas) 
+                                                        {
+                                                        case 1:
+                                                                mhs.daftarKelas();
+                                                                kembalidaftarkelas = true;
+                                                                break;
+                                                        case 2:
+                                                                mhs.daftarKelas();
+                                                                kembalidaftarkelas = true;
+                                                                break;
+                                                        case 3:
+                                                                mhs.daftarKelas();
+                                                                kembalidaftarkelas = true;
+                                                                break;
 
-                        case 3:
-                            kembaliAktor = true;
-                            break;
+                                                        case 4:
+                                                                loginSukses = true;
+                                                                break;
+                                                        }
+                                                }
+                                                break;
 
-                        default:
-                            System.out.println("Menu tidak tersedia!");
+                                        case 2:
+                                                System.out.println("=================================================================");
+                                                System.out.println("========================== KELAS SAYA ===========================");
+                                                System.out.println("=================================================================");
+                                                System.out.println("Informasi Kelas Yang Diikuti");
+                                                System.out.println("-----------------------------------------------------------------");
+                                                System.out.println("1. Kelas Bahasa Inggris");
+                                                System.out.println("2. Kelas Bahasa Jerman");
+                                                System.out.println("3. Kelas Bahasa China");
+                                                System.out.println("4. Kembali");
+                                                System.out.println("-----------------------------------------------------------------");
+                                                System.out.print("Pilih Menu : ");
+                                                int menumahasiswakelasdetail = input.nextInt();
+                                                System.out.println();
+                                                switch (menumahasiswakelasdetail) 
+                                                {
+                                                case 1:
+                                                        System.out.println("=================================================================");
+                                                        System.out.println("========================== KELAS SAYA ===========================");
+                                                        System.out.println("=================================================================");
+                                                        System.out.println("Selamat datang di Kelas Bahasa Inggris");
+                                                        System.out.println("-----------------------------------------------------------------");
+                                                        System.out.println("1. Lihat Jadwal Kelas");
+                                                        System.out.println("2. Materi Pembelajaran");
+                                                        System.out.println("3. Soal");
+                                                        System.out.println("4. Test");
+                                                        System.out.println("5. Sertifikat");                                                        
+                                                        System.out.println("6. Kembali");                                                                                                                
+                                                        System.out.println("-----------------------------------------------------------------");
+                                                        System.out.print("Pilih Menu : ");
+                                                        int menukelasbingg = input.nextInt();
+                                                        System.out.println();
+                                                        switch (menukelasbingg)   
+                                                        {
+                                                                case 1:
+                                                                        kelasbinggris.jadwalkelas();
+                                                                        break;
+                                                                case 2:
+                                                                        materibinggris1.lihatMateri();
+                                                                        materibinggris2.lihatMateri();
+                                                                        break;
+                                                                case 3:
+                                                                        soalbinggris1.lihatSoal();
+                                                                        soalbinggris2.lihatSoal();
+                                                                        break;
+
+
+                                                        }                                                     
+                                                        break;
+
+                                                case 2:
+                                                        tesbinggris1.ikutiTes();
+                                                        tesbinggris2.ikutiTes();
+                                                        tesbjerman1.ikutiTes();
+                                                        tesbjerman2.ikutiTes();
+                                                        tesbchina1.ikutiTes();
+                                                        tesbchina2.ikutiTes();
+                                                        break;
+
+                                                case 3:
+                                                        nilaibinggris1.lihatNilai();
+                                                        nilaibinggris2.lihatNilai();
+                                                        nilaibjerman1.lihatNilai();
+                                                        nilaibjerman2.lihatNilai();
+                                                        nilaibchina1.lihatNilai();
+                                                        nilaibchina2.lihatNilai();
+                                                }
+                                        }   
+                                }
+
+                                break;
                     }
                 }
-                break;
-
-            case 2:
-                System.out.println("Login sebagai Pengajar");
-                break;
-
-            case 3:
-                System.out.println("Login sebagai Lembaga Bahasa");
-                break;
-
-            case 4:
-                System.out.println("Terima kasih telah menggunakan sistem.");
-                break;
-
-            default:
-                System.out.println("Pilihan tidak valid!");
         }
-
 
         input.close();
 

@@ -11,7 +11,7 @@ public class Mahasiswa extends User {
     }
 
     public void daftarKelas() {
-        System.out.println("Mahasiswa mendaftar kelas");
+        System.out.println("Kamu berhasil mendaftar kelas");
     }
 
     public void ikutiKelas() {
