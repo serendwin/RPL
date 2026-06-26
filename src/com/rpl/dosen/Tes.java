@@ -7,6 +7,7 @@ public class Tes extends Dosen {
     private String tanggal;
     private int idKelas;
 
+    
     public Tes(int id_user,
                String namaUser,
                String email,

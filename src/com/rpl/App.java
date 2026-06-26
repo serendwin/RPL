@@ -1,5 +1,6 @@
 package com.rpl;
 
+import com.rpl.User;
 import com.rpl.lembaga.Kelas;
 import com.rpl.lembaga.Sertifikat;
 import com.rpl.dosen.Materi;
@@ -14,208 +15,456 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class App {
-    public static void main(String[] args) {
+public class App 
+{
+    public static void main(String[] args) 
+    {
+
+        User Mahasiswa = new User(
+                1,
+                "Joko",
+                "kijokogawlbodo@gmail.ac.id",
+                "66666",
+                "Mahasiswa"
+        );
+
+        User Pengajar1 = new User(
+                101,
+                "Mark Lee",
+                "marklee@gmail.ac.id",
+                "020809",
+                "Pengajar"
+        );   
+        
+        User Pengajar2 = new User(
+                102,
+                "Jisung Park",
+                "jisungpark@gmail.ac.id",
+                "050202",
+                "Pengajar"
+        );        
+
+        User Pengajar3 = new User(
+                103,
+                "Yeji Hwang",
+                "yejihwang@gmail.ac.id",
+                "050202",
+                "Pengajar"
+        );        
+
+        User Lembagabahasa = new User(
+                10,
+                "Ajeng Febriah",
+                "febriahajasie@gmail.ac.id",
+                "808080",
+                "Staff Lembaga Bahasa"
+        );        
+
+        Materi materibinggris1 = new Materi(
+                101,                            
+                "Mark Lee",               
+                "marklee@gmail.ac.id",
+                "020809",                       
+                20,                              
+                "Bahasa Inggris", 
+                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                10,                             
+                101                          
+        );
+
+        Materi materibinggris2 = new Materi(
+                101,                            
+                "Mark Lee",               
+                "marklee@gmail.ac.id",
+                "020809",                       
+                21,                              
+                "Bahasa Inggris", 
+                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                11,                             
+                101                          
+        );
+
+        Materi materibjerman1 = new Materi(
+                102,                            
+                "Jisung Park",               
+                "jisungpark@gmail.ac.id",
+                "050202",                       
+                20,                              
+                "Bahasa Jerman", 
+                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                20,                             
+                102                          
+        );
+
+        Materi materibjerman2 = new Materi(
+                102,                            
+                "Jisung Park",               
+                "jisungpark@gmail.ac.id",
+                "050202",                       
+                21,                              
+                "Bahasa Jerman", 
+                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                21,                             
+                102                          
+        );
+
+        Materi materibchina1 = new Materi(
+                103,                            
+                "Yeji Hwang",               
+                "yejihwang@gmail.ac.id",
+                "050203",                       
+                30,                              
+                "Bahasa Cina", 
+                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                30,                             
+                103                          
+        );
+
+        Materi materibchina2 = new Materi(
+                103,                            
+                "Yeji Hwang",               
+                "yejihwang@gmail.ac.id",
+                "050203",                       
+                31,                              
+                "Bahasa Cina", 
+                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                31,                             
+                103                          
+        );
+
+        Soal soalbinggris1 = new Soal(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                             
+                11,                                     
+                "Apa kepanjangan dari OOP?",       
+                "A. Object Oriented Programming\n" +
+                "B. Open Object Program\n" +
+                "C. Object Operating Process\n" +
+                "D. Operator Oriented Program",         
+                "A",                      
+                10                               
+        );
+
+        Soal soalbinggris2 = new Soal(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                             
+                12,                                     
+                "Apa kepanjangan dari OOP?",       
+                "A. Object Oriented Programming\n" +
+                "B. Open Object Program\n" +
+                "C. Object Operating Process\n" +
+                "D. Operator Oriented Program",         
+                "A",                      
+                11                               
+        );
+
+        Soal soalbjerman1 = new Soal(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                             
+                21,                                     
+                "Apa kepanjangan dari OOP?",       
+                "A. Object Oriented Programming\n" +
+                "B. Open Object Program\n" +
+                "C. Object Operating Process\n" +
+                "D. Operator Oriented Program",         
+                "A",                      
+                20                               
+        );
+
+        Soal soalbjerman2 = new Soal(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                             
+                22,                                     
+                "Apa kepanjangan dari OOP?",       
+                "A. Object Oriented Programming\n" +
+                "B. Open Object Program\n" +
+                "C. Object Operating Process\n" +
+                "D. Operator Oriented Program",         
+                "A",                      
+                21                             
+        );        
+
+        Soal soalbchina1 = new Soal(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                             
+                31,                                     
+                "Apa kepanjangan dari OOP?",       
+                "A. Object Oriented Programming\n" +
+                "B. Open Object Program\n" +
+                "C. Object Operating Process\n" +
+                "D. Operator Oriented Program",         
+                "A",                      
+                30                               
+        );
+
+        Soal soalbchina2 = new Soal(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                             
+                32,                                     
+                "Apa kepanjangan dari OOP?",       
+                "A. Object Oriented Programming\n" +
+                "B. Open Object Program\n" +
+                "C. Object Operating Process\n" +
+                "D. Operator Oriented Program",         
+                "A",                      
+                31                              
+        );
+
+        Tes tesbinggris1 = new Tes(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                 
+                10,                          
+                "Ujian Java OOP",         
+                "26-06-2026",             
+                10                        
+        );
+
+        Tes tesbinggris2 = new Tes(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                 
+                11,                          
+                "Ujian Java OOP",         
+                "26-06-2026",             
+                11                        
+        );        
+
+        Tes tesbjerman1 = new Tes(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                 
+                20,                          
+                "Ujian Java OOP",         
+                "26-06-2026",             
+                20                        
+        );
+
+        Tes tesbjerman2 = new Tes(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                 
+                21,                          
+                "Ujian Java OOP",         
+                "26-06-2026",             
+                21                        
+        );        
+        
+        Tes tesbchina1 = new Tes(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                 
+                30,                          
+                "Ujian Java OOP",         
+                "26-06-2026",             
+                30                        
+        );
+
+        Tes tesbchina2 = new Tes(
+                1,                                    
+                "Joko",                        
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                 
+                31,                          
+                "Ujian Java OOP",         
+                "26-06-2026",             
+                31                        
+        );        
+
+        Kelas kelasbinggris1 = new Kelas(
+                10,
+                "Pemrograman Berorientasi Objek",
+                101
+        );
+        
+        Kelas kelasbinggris2 = new Kelas(
+                11,
+                "Pemrograman Berorientasi Objek",
+                101
+        );
+
+        Kelas kelasbjerman1 = new Kelas(
+                20,
+                "Pemrograman Berorientasi Objek",
+                102
+        );
+        Kelas kelasbjerman2 = new Kelas(
+                21,
+                "Pemrograman Berorientasi Objek",
+                103
+        );
+        Kelas kelasbchina1 = new Kelas(
+                30,
+                "Pemrograman Berorientasi Objek",
+                103
+        );
+        Kelas kelasbchina2 = new Kelas(
+                31,
+                "Pemrograman Berorientasi Objek",
+                103
+        );
+
+        Sertifikat sertifikatbinggris1 = new Sertifikat(
+                15,      
+                1,    
+                10    
+        );        
+
+        Sertifikat sertifikatbinggris2 = new Sertifikat(
+                16,      
+                1,    
+                11    
+        );        
+
+        Sertifikat sertifikatbjerman1 = new Sertifikat(
+                25,      
+                1,    
+                20    
+        );        
+
+        Sertifikat sertifikatbjerman2 = new Sertifikat(
+                26,      
+                1,    
+                21    
+        );        
+
+        Sertifikat sertifikatbchina1 = new Sertifikat(
+                35,      
+                1,    
+                30    
+        );        
+
+        Sertifikat sertifikatbchina2 = new Sertifikat(
+                36,      
+                1,    
+                31    
+        );
+
+        Enrollment enrollmentBInggris1 = new Enrollment(
+                1,
+                1,
+                10
+        );
+
+        Enrollment enrollmentBInggris2 = new Enrollment(
+                2,
+                202,
+                11
+        );
+
+        Enrollment enrollmentBJerman1 = new Enrollment(
+                3,
+                203,
+                20
+        );
+
+        Enrollment enrollmentBJerman2 = new Enrollment(
+                4,
+                204,
+                21
+        );
+
+        Enrollment enrollmentBChina1 = new Enrollment(
+                5,
+                205,
+                30
+        );
+
+        Enrollment enrollmentBChina2 = new Enrollment(
+                6,
+                206,
+                31
+        );
         Scanner input = new Scanner(System.in);
 
-        // -----------------------------------------------------------------
-        // DATA MASTER (Sudah Terdaftar Otomatis di Sistem)
-        // -----------------------------------------------------------------
-        // Data Dosen
-        User dosen1 = new User(201, "Dr. Kornelius Sulistyo, S.Kom", "Kortyo@univ.ac.id", "dosen321", "dosen");
-        User dosen2 = new User(202, "Miss Sarah, M.Pd", "sarah@univ.ac.id", "dosen654", "dosen");
-
-        // Data Pilihan Kelas (Bahasa China & English)
-        Kelas kelasRpl = new Kelas(1, "Kelas Bahasa China", dosen1.getIdUser());
-        Kelas kelasIelts = new Kelas(2, "English Class", dosen2.getIdUser());
-
-        System.out.println("==================================================");
-        System.out.println("   SIMULASI SISTEM MANAGEMENT PEMBELAJARAN (RPL)  ");
-        System.out.println("==================================================\n");
-
-        // -----------------------------------------------------------------
-        // 1. INPUT IDENTITAS MAHASISWA & REGISTRASI
-        // -----------------------------------------------------------------
-        System.out.println("--- [1] Registrasi Identitas Mahasiswa ---");
-        System.out.print("Masukkan Nama Anda : ");
-        String namaMhs = input.nextLine();
-        if (namaMhs.trim().isEmpty()) {
-            namaMhs = "Delsyad Iza";
-        }
-        
-        System.out.print("Masukkan Email Anda : ");
-        String emailMhs = input.nextLine();
-        if (emailMhs.trim().isEmpty()) {
-            emailMhs = "delsyad@univ.ac.id";
-        }
-        
-        User mhs = new User();
-        mhs.setIdUser(101);
-        mhs.daftar(namaMhs, emailMhs, "rahasia123", "mahasiswa");
+        System.out.println("______________________________________________________________________");
+        System.out.println("=====           Selamat Datang Di Sistem Aku Cinta Bahasa           ====");
+        System.out.println("=====             Lembaga Bahasa Universitas Pancasila             ====");
+        System.out.println("----------------------------------------------------------------------");
+        System.out.println("Login Sebagai:");
+        System.out.println("----------------------------------------------------------------------");
+        System.out.println("1. Mahasiswa");
+        System.out.println("2. Pengajar");
+        System.out.println("3. Lembaga Bahasa");
+        System.out.println("4. Keluar");
+        System.out.println("----------------------------------------------------------------------");
+        System.out.print("Pilih menu : ");
+        int menuUtama = input.nextInt();
         System.out.println();
 
-        // -----------------------------------------------------------------
-        // 2. PILIHAN KELAS (DIPILIH OLEH MAHASISWA)
-        // -----------------------------------------------------------------
-        System.out.println("--- [2] Pendaftaran Kelas Kuliah ---");
-        System.out.println("Daftar Kelas yang Tersedia:");
-        System.out.println("1. " + kelasRpl.getNamaKelas() + " (Pengajar ID: " + kelasRpl.getIdPengajar() + ")");
-        System.out.println("2. " + kelasIelts.getNamaKelas() + " (Pengajar ID: " + kelasIelts.getIdPengajar() + ")");
-        System.out.print("Pilih nomor kelas yang ingin diikuti (1/2): ");
-        int pilihan = input.nextInt();
-        input.nextLine(); // Membersihkan sisa baris baru/enter
+        switch (menuUtama) {
 
-        // Variabel penampung untuk kelas dan dosen terpilih
-        Kelas kelasTerpilih = null;
-        User dosenTerpilih = null;
+            case 1:
+                boolean kembaliAktor = false;
 
-        if (pilihan == 1) {
-            kelasTerpilih = kelasRpl;
-            dosenTerpilih = dosen1;
-        } else if (pilihan == 2) {
-            kelasTerpilih = kelasIelts;
-            dosenTerpilih = dosen2;
-        } else {
-            System.out.println("[Error] Pilihan tidak valid! Otomatis dialihkan ke Kelas Bahasa China.");
-            kelasTerpilih = kelasRpl;
-            dosenTerpilih = dosen1;
-        }
+                while (!kembaliAktor) {
+                    System.out.println("=================================================================");
+                    System.out.println("========================= MENU AKTOR ============================");
+                    System.out.println("=================================================================");
+                    System.out.println("1. Lihat Biodata");
+                    System.out.println("2. Info Event dan Pembelian Tiket");
+                    System.out.println("3. Kembali ke Menu Utama");
+                    System.out.println("-----------------------------------------------------------------");
+                    System.out.print("Pilih Menu : ");
 
-        System.out.println("\n>> ANDA BERHASIL MEMILIH KELAS BERSAMA DOSEN:");
-        System.out.println("   Nama Kelas   : " + kelasTerpilih.getNamaKelas());
-        System.out.println("   Nama Pengajar: " + dosenTerpilih.getNamaUser());
-        System.out.println("   Email Dosen  : " + dosenTerpilih.getEmail());
-        System.out.println("--------------------------------------------------\n");
+                    int menuAktor = input.nextInt();
+                    System.out.println();
 
-        kelasTerpilih.mulai_kelas();
-        
-        System.out.println(">> Aktivitas di Dalam Kelas:");
-        kelasTerpilih.lihatmateri();   
-        kelasTerpilih.lihatpeserta();  
+                    switch (menuAktor) {
+                        case 1:
+                            System.out.println("Menampilkan Biodata...");
+                            break;
 
-        // -----------------------------------------------------------------
-        // 3. PROSES ENROLLMENT KELAS TERPILIH
-        // -----------------------------------------------------------------
-        System.out.println("\n--- [3] Proses Pendaftaran Kelas (Enrollment) ---");
-        Enrollment enrollBudi = new Enrollment();
-        enrollBudi.setIdEnroll(8801);
-        enrollBudi.daftar(mhs.getIdUser(), kelasTerpilih.getIdKelas());
-        enrollBudi.validasiPendaftaran(); 
-        System.out.println();
+                        case 2:
+                            System.out.println("Menampilkan Event dan Tiket...");
+                            break;
 
-        // -----------------------------------------------------------------
-        // 4. DOSEN MEMBUAT MATERI & TES
-        // -----------------------------------------------------------------
-        System.out.println("--- [4] Pembuatan Ujian/Tes oleh Dosen Terpilih ---");
-        Materi materi1 = new Materi();
-        materi1.setIdMateri(501);
-        
-        Tes uasListening = new Tes();
-        uasListening.setIdTest(701);
-        
-        Soal soal1 = new Soal();
-        Soal soal2 = new Soal();
+                        case 3:
+                            kembaliAktor = true;
+                            break;
 
-        // Kondisi materi kuis dinamis berdasarkan kelas yang kamu pilih
-        if (kelasTerpilih.getIdKelas() == 1) {
-            materi1.tambahMateri("Basic Hanyu Pinyin", "Materi pengenalan nada dan ejaan Bahasa China.", kelasTerpilih.getIdKelas(), dosenTerpilih.getIdUser());
-            materi1.lihatMateri();
-            System.out.println();
+                        default:
+                            System.out.println("Menu tidak tersedia!");
+                    }
+                }
+                break;
 
-            uasListening.buatTes("UAS Hanyu Listening 101", LocalDate.now(), kelasTerpilih.getIdKelas());
+            case 2:
+                System.out.println("Login sebagai Pengajar");
+                break;
 
-            soal1.setIdSoal(901);
-            soal1.tambahSoal("Apa arti dari kata 'Ni Hao' (你好)?", "A. Terima Kasih | B. Halo", "B", uasListening.getIdTest());
+            case 3:
+                System.out.println("Login sebagai Lembaga Bahasa");
+                break;
 
-            soal2.setIdSoal(902);
-            soal2.tambahSoal("Bagaimana cara membaca angka 1 dalam pinyin?", "A. Yi | B. Er", "A", uasListening.getIdTest());
-        } else {
-            materi1.tambahMateri("Basic English Grammar", "Materi pembelajaran Tenses dasar.", kelasTerpilih.getIdKelas(), dosenTerpilih.getIdUser());
-            materi1.lihatMateri();
-            System.out.println();
+            case 4:
+                System.out.println("Terima kasih telah menggunakan sistem.");
+                break;
 
-            uasListening.buatTes("UAS English Listening 101", LocalDate.now(), kelasTerpilih.getIdKelas());
-
-            soal1.setIdSoal(901);
-            soal1.tambahSoal("Which one is a verb?", "A. Run | B. Beautiful", "A", uasListening.getIdTest());
-
-            soal2.setIdSoal(902);
-            soal2.tambahSoal("What is the past tense of 'Go'?", "A. Gone | B. Went", "B", uasListening.getIdTest());
+            default:
+                System.out.println("Pilihan tidak valid!");
         }
 
-        uasListening.mulaiTes();
-        System.out.println();
 
-        // -----------------------------------------------------------------
-        // 5. MAHASISWA MENGERJAKAN TES
-        // -----------------------------------------------------------------
-        System.out.println("--- [5] Mahasiswa Mengerjakan Ujian ---");
-
-        System.out.println("Soal 1: " + soal1.getPertanyaan());
-        System.out.println(soal1.getPilihan().replace(" | ", "\n"));
-        System.out.print("Jawaban Anda (A/B): ");
-
-        String jawab1 = input.nextLine().toUpperCase();
-
-        // Di sini kata "Jawaban" sudah bersih dan normal kembali
-        Jawaban jwb1 = new Jawaban();
-        jwb1.setIdJawaban(11);
-        jwb1.setIdUser(mhs.getIdUser());
-        jwb1.setIdSoal(soal1.getIdSoal());
-        jwb1.simpanJawaban(jawab1);
-        jwb1.periksaJawaban(soal1);
-
-        System.out.println("\nSoal 2: " + soal2.getPertanyaan());
-        System.out.println(soal2.getPilihan().replace(" | ", "\n"));
-        System.out.print("Jawaban Anda (A/B): ");
-        String jawab2 = input.nextLine().toUpperCase();
-
-        Jawaban jwb2 = new Jawaban();
-        jwb2.setIdJawaban(12);
-        jwb2.setIdUser(mhs.getIdUser());
-        jwb2.setIdSoal(soal2.getIdSoal());
-        jwb2.simpanJawaban(jawab2);
-        jwb2.periksaJawaban(soal2);
-
-        uasListening.tutupTes();
-        System.out.println();
-
-        // -----------------------------------------------------------------
-        // 6. PENILAIAN HASIL UJIAN
-        // -----------------------------------------------------------------
-        System.out.println("--- [6] Perhitungan Nilai Ujian ---");
-        List<Jawaban> listJawabanBudi = new ArrayList<>();
-        listJawabanBudi.add(jwb1);
-        listJawabanBudi.add(jwb2);
-
-        Nilai nilaiUasBudi = new Nilai(401, mhs.getIdUser(), uasListening.getIdTest());
-        nilaiUasBudi.hitungNilai(listJawabanBudi);
-        nilaiUasBudi.lihatNilai();
-        System.out.println();
-
-        // -----------------------------------------------------------------
-        // 7. PENERBITAN SERTIFIKAT
-        // -----------------------------------------------------------------
-        System.out.println("--- [7] Rekapitulasi & Kelulusan (Sertifikat) ---");
-        enrollBudi.selesaikan();
-
-        List<Nilai> seluruhNilaiBudi = new ArrayList<>();
-        seluruhNilaiBudi.add(nilaiUasBudi);
-
-        Sertifikat sertifikatBudi = new Sertifikat(9901, mhs.getIdUser(), kelasTerpilih.getIdKelas());
-        sertifikatBudi.hitungNilai(seluruhNilaiBudi);
-        sertifikatBudi.lihatNilai();
-        System.out.println();
-
-        // -----------------------------------------------------------------
-        // 8. LOGOUT LOG
-        // -----------------------------------------------------------------
-        System.out.println("--- [8] Akhir Sesi ---");
-        mhs.logout();
-        System.out.println("\n==================================================");
-        System.out.println("            SIMULASI SELESAI DIJALANKAN           ");
-        System.out.println("==================================================");
-        
         input.close();
+
+
     }
 }
