@@ -22,6 +22,11 @@ public class Kelas {
         this.waktukelas = waktukelas;
     }
 
+
+        public String getNamaKelas() {
+        return namaKelas;
+    }
+
     public void mulaiKelas() 
     {
         System.out.println("===========================================================");

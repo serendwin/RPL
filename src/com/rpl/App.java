@@ -134,18 +134,19 @@ public class App
         );
 
         Soal soalbinggris1 = new Soal(
-                        1,                                      
-                        "Joko",                                
-                        "kijokogawlbodo@gmail.ac.id",                    
-                        "66666",                                 
-                        11,                                      
-                        "Yesterday, my sister ______ to the library to borrow some novels.", // Pertanyaan b.inggris      
-                        "A. goes\n" +
-                        "B. went\n" +
-                        "C. gone\n" +
-                        "D. going",        
-                        "B",                      
-                        10                                               
+                1,                                      
+                "Joko",                                
+                "kijokogawlbodo@gmail.ac.id",                    
+                "66666",                                 
+                11,                                      
+                "Yesterday, my sister ______ to the library to borrow some novels.", // Pertanyaan b.inggris      
+                "A. goes\n" +
+                "B. went\n" +
+                "C. gone\n" +
+                "D. going",        
+                "B",  
+                "English Class",                    
+                10                                               
                 );
 
         Soal soalbinggris2 = new Soal(
@@ -154,12 +155,13 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                             
                 12,                                     
-                "Apa kepanjangan dari OOP?",       
-                "A. Object Oriented Programming\n" +
-                "B. Open Object Program\n" +
-                "C. Object Operating Process\n" +
-                "D. Operator Oriented Program",         
-                "A",                      
+                "The classroom was very ______ because all the students were studying quietly.", // Pertanyaan baru     
+                "A. noisy\n" +
+                "B. crowded\n" +
+                "C. peaceful\n" +
+                "D. messy",         
+                "C",
+                "English Class",                                  
                 11                               
         );
 
@@ -174,7 +176,8 @@ public class App
                 "B. Open Object Program\n" +
                 "C. Object Operating Process\n" +
                 "D. Operator Oriented Program",         
-                "A",                      
+                "A",
+                "Jerman Class",                      
                 20                               
         );
 
@@ -189,7 +192,8 @@ public class App
                 "B. Open Object Program\n" +
                 "C. Object Operating Process\n" +
                 "D. Operator Oriented Program",         
-                "A",                      
+                "A",
+                "Jerman Class",                      
                 21                             
         );        
 
@@ -204,7 +208,8 @@ public class App
                 "B. Open Object Program\n" +
                 "C. Object Operating Process\n" +
                 "D. Operator Oriented Program",         
-                "A",                      
+                "A", 
+                "China Class",                     
                 30                               
         );
 
@@ -219,7 +224,8 @@ public class App
                 "B. Open Object Program\n" +
                 "C. Object Operating Process\n" +
                 "D. Operator Oriented Program",         
-                "A",                      
+                "A",    
+                "China Class",                  
                 31                              
         );
 
@@ -494,11 +500,11 @@ public class App
                                 break;
 
                         case 2:
+                                Mahasiswa.loginakun();
+                                Mahasiswa.loginberhasil();
                                 boolean loginSukses = false;
                                 while (!loginSukses)
                                 {
-                                        Mahasiswa.loginakun();
-                                        Mahasiswa.loginberhasil();
                                         System.out.println("=================================================================");
                                         System.out.println("========================== MAHASISWA ============================");
                                         System.out.println("=================================================================");
@@ -586,34 +592,110 @@ public class App
                                                                         kelasbinggris.jadwalkelas();
                                                                         break;
                                                                 case 2:
-                                                                        materibinggris1.lihatMateri();
-                                                                        materibinggris2.lihatMateri();
+                                                                        System.out.println("=================================================================");
+                                                                        System.out.println("=========================  DAFTAR KELAS  ========================");
+                                                                        System.out.println("=================================================================");
+                                                                        System.out.println("1. Pertemuan 1");
+                                                                        System.out.println("2. Pertemuan 2");
+                                                                        System.out.println("3. Kembali");
+                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                        System.out.print("Pilih Materi : ");
+                                                                        int menumateribingg = input.nextInt();
+                                                                        System.out.println();
+                                                                        switch (menumateribingg) 
+                                                                        {
+                                                                                case 1:
+                                                                                        materibinggris1.lihatMateri();
+                                                                                        break;
+                                                                                case 2:
+                                                                                        materibinggris2.lihatMateri();
+                                                                                        break;
+                                                                                case 3:
+                                                                                        break;
+                                                                        }
                                                                         break;
                                                                 case 3:
-                                                                        soalbinggris1.lihatSoal();
-                                                                        soalbinggris2.lihatSoal();
+                                                                        Soal[] daftarUjian = {soalbinggris1, soalbinggris2};        
+                                                                        int totalNilai = 0;
+                                                                        System.out.println("===========================================================");
+                                                                        System.out.println("                MULAI UJIAN BAHASA INGGRIS                 ");
+                                                                        System.out.println("===========================================================");
+                                                                        System.out.println("Nama Kelas: " + kelasbinggris.getNamaKelas());
+                                                                        System.out.println("Nama Pengajar: " + Pengajar1.getNamaUser());
+                                                                        System.out.println("Total Soal: " + daftarUjian.length);
+                                                                        System.out.println();
+                                                                        for (int i = 0; i < daftarUjian.length; i++) 
+                                                                        {
+                                                                                System.out.println(i + 1);
+                                                                                System.out.println("Pertanyaan   : " + daftarUjian[i].getPertanyaan());
+                                                                                System.out.println();
+                                                                                System.out.println(daftarUjian[i].getPilihan());
+                                                                                System.out.println("-----------------------------------------------------------");
+                                                                                System.out.print("Jawaban Anda: ");
+                                                                                String jawabanUser = input.next();
+                                                                                if (jawabanUser.equalsIgnoreCase(daftarUjian[i].getJawabanBenar())) 
+                                                                                {
+                                                                                        System.out.println("-> Benar!");
+                                                                                        totalNilai += 50;
+                                                                                } 
+                                                                                else 
+                                                                                {
+                                                                                        System.out.println("-> Salah! (Jawaban benar: " + daftarUjian[i].getJawabanBenar() + ")");
+                                                                                }
+                                                                                System.out.println("===========================================================");
+                                                                                System.out.println("                      REKAP NILAI AKHIR                    ");
+                                                                                System.out.println("===========================================================");
+                                                                                System.out.println("Nama Mahasiswa : " + Mahasiswa.getNamaUser());
+                                                                                System.out.println("Total Nilai    : " + totalNilai + " / 100");
+                                                                                System.out.println("Status Ujian   : " + (totalNilai >= 70 ? "LULUS" : "REMEDIAL"));
+                                                                                System.out.println("===========================================================");
+                                                                        }
                                                                         break;
+                                                                case 4:
+                                                                        Tes[] daftarTes = {tesbinggris1, tesbinggris2};        
+                                                                        int totalNilaiTes = 0;
+                                                                        System.out.println("===========================================================");
+                                                                        System.out.println("                MULAI TES BAHASA INGGRIS                   ");
+                                                                        System.out.println("===========================================================");
+                                                                        System.out.println("Nama Kelas: " + kelasbinggris.getNamaKelas());
+                                                                        System.out.println("Nama Pengajar: " + Pengajar1.getNamaUser());
+                                                                        System.out.println("Total Tes: " + daftarTes.length);
+                                                                        System.out.println();
+                                                                        for (int i = 0; i < daftarTes.length; i++) 
+                                                                        {
+                                                                                System.out.println(i + 1);
+                                                                                System.out.println("Pertanyaan   : " + daftarTes[i].getPertanyaan());
+                                                                                System.out.println();
+                                                                                System.out.println(daftarTes[i].getPilihan());
+                                                                                System.out.println("-----------------------------------------------------------");
+                                                                                System.out.print("Jawaban Anda: ");
+                                                                                String jawabanUserTes = input.next();
+                                                                                if (jawabanUserTes.equalsIgnoreCase(daftarTes[i].getJawabanBenar())) 
+                                                                                {
+                                                                                        System.out.println("-> Benar!");
+                                                                                        totalNilaiTes += 50;
+                                                                                } 
+                                                                                else 
+                                                                                {
+                                                                                        System.out.println("-> Salah! (Jawaban benar: " + daftarTes[i].getJawabanBenar() + ")");
+                                                                                }
+                                                                                System.out.println("===========================================================");
+                                                                                System.out.println("                      REKAP NILAI TES                      ");
+                                                                                System.out.println("===========================================================");
+                                                                                System.out.println("Nama Mahasiswa : " + Mahasiswa.getNamaUser());
+                                                                                System.out.println("Total Nilai    : " + totalNilaiTes + " / 100");
+                                                                                System.out.println("Status Tes     : " + (totalNilaiTes >= 70 ? "LULUS" : "REMEDIAL"));
 
 
                                                         }                                                     
                                                         break;
 
                                                 case 2:
-                                                        tesbinggris1.ikutiTes();
-                                                        tesbinggris2.ikutiTes();
-                                                        tesbjerman1.ikutiTes();
-                                                        tesbjerman2.ikutiTes();
-                                                        tesbchina1.ikutiTes();
-                                                        tesbchina2.ikutiTes();
+
                                                         break;
 
                                                 case 3:
-                                                        nilaibinggris1.lihatNilai();
-                                                        nilaibinggris2.lihatNilai();
-                                                        nilaibjerman1.lihatNilai();
-                                                        nilaibjerman2.lihatNilai();
-                                                        nilaibchina1.lihatNilai();
-                                                        nilaibchina2.lihatNilai();
+
                                                 }
                                         }   
                                 }

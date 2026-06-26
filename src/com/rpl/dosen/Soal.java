@@ -30,7 +30,23 @@ public class Soal extends Dosen
         this.namaKelas = namaKelas;
         this.namaPengajar = namaPengajar;
     }
+    
+    public int getIdSoal() {
+        return idSoal;
+    }
 
+    public String getPertanyaan() {
+        return pertanyaan;
+    }
+
+    public String getPilihan() {
+        return pilihan;
+    }
+
+    public String getJawabanBenar() {
+        return jawabanBenar;
+    }
+    
     public void tambahSoal() 
     {
         System.out.println("===========================================================");

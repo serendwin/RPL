@@ -23,6 +23,10 @@ public class User {
         this.role = role;
     }
 
+    public String getNamaUser() {
+        return nama_user;
+    }
+        
     public void daftar() 
     {
         System.out.println("===========================================================");
