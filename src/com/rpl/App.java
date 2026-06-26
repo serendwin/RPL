@@ -134,19 +134,19 @@ public class App
         );
 
         Soal soalbinggris1 = new Soal(
-                1,                                    
-                "Joko",                        
-                "kijokogawlbodo@gmail.ac.id",                    
-                "66666",                             
-                11,                                     
-                "Apa kepanjangan dari OOP?",       
-                "A. Object Oriented Programming\n" +
-                "B. Open Object Program\n" +
-                "C. Object Operating Process\n" +
-                "D. Operator Oriented Program",         
-                "A",                      
-                10                               
-        );
+                        1,                                      
+                        "Joko",                                
+                        "kijokogawlbodo@gmail.ac.id",                    
+                        "66666",                                 
+                        11,                                      
+                        "Yesterday, my sister ______ to the library to borrow some novels.", // Pertanyaan b.inggris      
+                        "A. goes\n" +
+                        "B. went\n" +
+                        "C. gone\n" +
+                        "D. going",        
+                        "B",                      
+                        10                                               
+                );
 
         Soal soalbinggris2 = new Soal(
                 1,                                    

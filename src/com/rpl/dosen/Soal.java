@@ -6,7 +6,8 @@ public class Soal extends Dosen
     private String pertanyaan;
     private String pilihan;
     private String jawabanBenar;
-    private int idTes;
+    private String namaKelas;
+    private int namaPengajar;
 
     public Soal(int id_user,
                 String namaUser,
@@ -16,7 +17,9 @@ public class Soal extends Dosen
                 String pertanyaan,
                 String pilihan,
                 String jawabanBenar,
-                int idTes) {
+                String namaKelas,
+                int namaPengajar) 
+    {
 
         super(id_user, namaUser, email, password);
 
@@ -24,16 +27,18 @@ public class Soal extends Dosen
         this.pertanyaan = pertanyaan;
         this.pilihan = pilihan;
         this.jawabanBenar = jawabanBenar;
-        this.idTes = idTes;
+        this.namaKelas = namaKelas;
+        this.namaPengajar = namaPengajar;
     }
 
-    public void tambahSoal() {
+    public void tambahSoal() 
+    {
         System.out.println("===========================================================");
         System.out.println("                  SOAL BERHASIL DITAMBAH");
         System.out.println("===========================================================");
         System.out.println("ID Soal      : " + idSoal);
-        System.out.println("Pertanyaan   : " + pertanyaan);
-        System.out.println("ID Tes       : " + idTes);
+        System.out.println("Kelas        : " + namaKelas);
+        System.out.println("Pengajar     : " + namaPengajar);
         System.out.println("===========================================================");
         System.out.println();
     }
@@ -43,8 +48,8 @@ public class Soal extends Dosen
         System.out.println("                   SOAL BERHASIL DIEDIT");
         System.out.println("===========================================================");
         System.out.println("ID Soal      : " + idSoal);
-        System.out.println("Pertanyaan   : " + pertanyaan);
-        System.out.println("ID Tes       : " + idTes);
+        System.out.println("Kelas        : " + namaKelas);
+        System.out.println("Pengajar     : " + namaPengajar);
         System.out.println("Status       : Data soal diperbarui");
         System.out.println("===========================================================");
         System.out.println();
@@ -55,8 +60,8 @@ public class Soal extends Dosen
         System.out.println("                  SOAL BERHASIL DIHAPUS");
         System.out.println("===========================================================");
         System.out.println("ID Soal      : " + idSoal);
-        System.out.println("Pertanyaan   : " + pertanyaan);
-        System.out.println("ID Tes       : " + idTes);
+        System.out.println("Kelas        : " + namaKelas);
+        System.out.println("Pengajar     : " + namaPengajar);
         System.out.println("Status       : Soal telah dihapus");
         System.out.println("===========================================================");
         System.out.println();
@@ -65,9 +70,8 @@ public class Soal extends Dosen
     public void eksekusiUjian(java.util.Scanner input) 
     {
         System.out.println("===========================================================");
-        System.out.println("                    MULAI UJIAN MAHASISWA                  ");
+        System.out.println("                    MULAI MENGERJAKAN SOAL                 ");
         System.out.println("===========================================================");
-        System.out.println("ID Tes       : " + this.idTes);
         System.out.println("ID Soal      : " + this.idSoal);
         System.out.println("-----------------------------------------------------------");
         System.out.println("Pertanyaan: " + this.pertanyaan);
