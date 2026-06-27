@@ -34,16 +34,16 @@ public class User {
         
     public boolean daftar() 
         {
-            System.out.println("===========================================================");
-            System.out.println("                         DAFTAR ");
-            System.out.println("===========================================================");
+            System.out.println("=================================================================");
+            System.out.println("                              DAFTAR ");
+            System.out.println("=================================================================");
             System.out.print("Masukan nama anda        : ");
             this.nama_user = input.nextLine();        
             System.out.print("Masukan email anda       : ");
             this.email = input.nextLine();
             System.out.print("Masukan password anda    : ");
             this.password = input.nextLine();  
-            System.out.println("===========================================================");
+            System.out.println("=================================================================");
             if (!nama_user.isEmpty() && !email.isEmpty() && !password.isEmpty()) 
             {
                 return true;     
@@ -75,15 +75,14 @@ public class User {
     }
     
     public User loginakun(ArrayList<User> listAkun) { 
-            System.out.println("===========================================================");
-            System.out.println("                         LOGIN ");
-            System.out.println("===========================================================");
+            System.out.println("=================================================================");
+            System.out.println("                            LOGIN ");
+            System.out.println("=================================================================");
             System.out.print("Masukkan email anda       : ");
             String emailInput = input.nextLine(); 
             System.out.print("Masukkan password anda    : ");
             String passwordInput = input.nextLine();
-            System.out.println("===========================================================");
-            
+            System.out.println("=================================================================");
             for (User u : listAkun) {
                 if (emailInput.equals(u.email) && passwordInput.equals(u.password)) {
                     return u; 
@@ -94,9 +93,9 @@ public class User {
         
     public void logout() 
     {
-        System.out.println("===========================================================");
-        System.out.println("                 LOGOUT");
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
+        System.out.println("                                LOGOUT");
+        System.out.println("=================================================================");
         System.out.println("Sampai jumpa, " + nama_user);
         System.out.println("Terima kasih telah menggunakan sistem les bahasa.");
         System.out.println("===========================================================");
@@ -104,14 +103,14 @@ public class User {
     }
 
     public void lihatProfil() {
-        System.out.println("===========================================================");
-        System.out.println("                  PROFIL PENGGUNA");
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
+        System.out.println("                        PROFIL PENGGUNA");
+        System.out.println("=================================================================");
         System.out.println("ID User : " + id_user);
         System.out.println("Nama    : " + nama_user);
         System.out.println("Email   : " + email);
         System.out.println("Role    : " + role);
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
         System.out.println();
     }
 }

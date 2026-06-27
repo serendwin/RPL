@@ -91,8 +91,7 @@ public class Materi extends Pengajar
         System.out.println("ID Kelas     : " + idKelas);
         System.out.println("ID Pengajar  : " + idPengajar);
         System.out.println("Status       : Materi telah dihapus");
-        System.out.println("===========================================================");
-        System.out.println();
+        System.out.println("=================================================================");
     }
 
     public void lihatMateri() {
