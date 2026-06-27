@@ -23,6 +23,10 @@ public class User {
         this.role = role;
     }
 
+    public int getIdUser() {
+        return id_user;
+    }
+
     public String getNamaUser() {
         return nama_user;
     }

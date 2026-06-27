@@ -44,7 +44,7 @@ public class Tes extends Dosen {
         System.out.println("ID Tes       : " + idTes);
         System.out.println("Nama Tes     : " + namaTes);
         System.out.println("Tanggal      : " + tanggal);
-        System.out.println("Status       : Sedang Berlangsung");
+        System.out.println("Status       : Open Book");
         System.out.println("===========================================================");
         System.out.println();
     }
