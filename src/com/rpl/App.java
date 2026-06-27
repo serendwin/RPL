@@ -2,6 +2,7 @@ package com.rpl;
 
 import com.rpl.User;
 import com.rpl.lembaga.Kelas;
+import com.rpl.lembaga.LembagaBahasa;
 import com.rpl.lembaga.Sertifikat;
 import com.rpl.mahasiswa.Enrollment;
 import com.rpl.mahasiswa.Jawaban;
@@ -392,6 +393,13 @@ public class App
         );
 
         Mahasiswa mhs = new Mahasiswa(1, "Joko", "kijokogawlbodo@gmail.ac.id", "66666");
+
+        LembagaBahasa stafflembaga = new LembagaBahasa(
+        10,                         
+        "Ajeng Febriah",           
+        "febriahajasie@gmail.ac.id",      
+        "808080"               
+        );        
 
         Scanner input = new Scanner(System.in);
     
@@ -1207,9 +1215,75 @@ public class App
                                                 switch (menustaflembaga) 
                                                 {
                                                         case 1: 
-
+                                                                boolean menuKelas = true;
+                                                                while (menuKelas) 
+                                                                {
+                                                                        System.out.println("=========================================================");
+                                                                        System.out.println("                      KELOLA KELAS                       ");
+                                                                        System.out.println("=========================================================");
+                                                                        System.out.println("1. Kelola Jadwal Kelas");
+                                                                        System.out.println("2. Kelola Kurikulum");
+                                                                        System.out.println("3. Kembali");
+                                                                        System.out.println("---------------------------------------------------------");
+                                                                        System.out.print("Pilih Menu Kelas : ");
+                                                                        int subkelas = input.nextInt();
+                                                                        switch (subkelas) 
+                                                                        {
+                                                                                case 1: 
+                                                                                        System.out.println("=================================================================");
+                                                                                        System.out.println("========================= KELAS BAHASA ==========================");
+                                                                                        System.out.println("=================================================================");
+                                                                                        System.out.println("Informasi Kelas Yang Diikuti");
+                                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                                        System.out.println("1. Kelas Bahasa Inggris");
+                                                                                        System.out.println("2. Kelas Bahasa Jerman");
+                                                                                        System.out.println("3. Kelas Bahasa China");
+                                                                                        System.out.println("4. Kembali");
+                                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                                        System.out.print("Pilih Menu Kelas : ");
+                                                                                        int kelasbahasa = input.nextInt();
+                                                                                        switch (kelasbahasa)
+                                                                                        {
+                                                                                                case 1:
+                                                                                                        kelasbinggris.mulaiKelas();
+                                                                                                        kelasbinggris.jadwalkelas();
+                                                                                                        stafflembaga.kelolaJadwal(); 
+                                                                                                        break;
+                                                                                                case 2:
+                                                                                                        kelasbjerman.mulaiKelas();
+                                                                                                        kelasbjerman.jadwalkelas();
+                                                                                                        stafflembaga.kelolaJadwal();                                                                                                        
+                                                                                                        break;
+                                                                                                case 3:
+                                                                                                        kelasbchina.mulaiKelas();
+                                                                                                        kelasbchina.jadwalkelas();
+                                                                                                        stafflembaga.kelolaJadwal();
+                                                                                                case 4: 
+                                                                                                        menuKelas = true;
+                                                                                                        break;
+                                                                                                default: 
+                                                                                                        System.out.println("Pilihan tidak valid!");
+                                                                                                        System.out.println();                                                                                                                                                                                                         
+                                                                                        }
+                                                                                        break;
+                                                                                case 2:
+                                                                                        stafflembaga.kelolaKurikulum();
+                                                                                        break;
+                                                                                case 3:
+                                                                                        menuKelas = true;
+                                                                                        break;
+                                                                                default:
+                                                                                        System.out.println("Pilihan tidak valid!");
+                                                                                        System.out.println();
+                                                                        }
+                                                                }
                                                                 break;
                                                         case 2: 
+                                                                System.out.println("=========================================================");
+                                                                System.out.println("                    KELOLA SERTIFIKAT                    ");
+                                                                System.out.println("=========================================================");
+                                                                stafflembaga.terbitSertifikat(); 
+                                                                System.out.println();                                                        
                                                                 break; 
                                                         case 3: 
                                                                 menuutamastafflembaga = true;

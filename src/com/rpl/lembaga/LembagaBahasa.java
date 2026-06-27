@@ -10,15 +10,17 @@ public class LembagaBahasa extends User {
         super(idUser,namaUser,email,password,"Admin");
     }
 
-    public void validasiDaftar() {
+    public void validasiDaftar() 
+    {
         System.out.println("Pendaftaran tervalidasi");
     }
 
     public void kelolaJadwal() {
-        System.out.println("Mengelola jadwal");
+        System.out.println("Jadwal sudah dikelola");
     }
 
-    public void kelolaKurikulum() {
+    public void kelolaKurikulum()
+    {
         System.out.println("Mengelola kurikulum");
     }
 
