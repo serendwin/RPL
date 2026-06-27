@@ -1,5 +1,6 @@
 package com.rpl;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class User {
@@ -31,20 +32,31 @@ public class User {
         return nama_user;
     }
         
-    public void daftar() 
-    {
-        System.out.println("===========================================================");
-        System.out.println("                         DAFTAR ");
-        System.out.println("===========================================================");
-        System.out.print("Masukan nama anda        : ");
-        nama_user = input.nextLine();        
-        System.out.print("Masukan email anda       : ");
-        email = input.nextLine();
-        System.out.print("Masukan password anda    : ");
-        password = input.nextLine();  
-        System.out.println("===========================================================");
-        System.out.println();
-    }
+    public boolean daftar() 
+        {
+            System.out.println("===========================================================");
+            System.out.println("                         DAFTAR ");
+            System.out.println("===========================================================");
+            System.out.print("Masukan nama anda        : ");
+            this.nama_user = input.nextLine();        
+            System.out.print("Masukan email anda       : ");
+            this.email = input.nextLine();
+            System.out.print("Masukan password anda    : ");
+            this.password = input.nextLine();  
+            System.out.println("===========================================================");
+            System.out.println();
+            if (!nama_user.isEmpty() && !email.isEmpty() && !password.isEmpty()) 
+            {
+                registrasiberhasil();
+                loginberhasil(); 
+                return true;     
+            } 
+            else 
+            {
+                registrasiinvalid();
+                return false;
+            }
+        }
 
     public void registrasiberhasil() 
     {
@@ -66,19 +78,24 @@ public class User {
         System.out.println("Login gagal: Email atau password salah.");
     }
     
-    public void loginakun() 
-    {
-        System.out.println("===========================================================");
-        System.out.println("                         LOGIN ");
-        System.out.println("===========================================================");
-        System.out.print("Masukan email anda       : ");
-        email = input.nextLine();
-        System.out.print("Masukan password anda    : ");
-        password = input.nextLine();  
-        System.out.println("===========================================================");
-        System.out.println();
-    }
-
+    public User loginakun(ArrayList<User> listAkun) { 
+            System.out.println("===========================================================");
+            System.out.println("                         LOGIN ");
+            System.out.println("===========================================================");
+            System.out.print("Masukkan email anda       : ");
+            String emailInput = input.nextLine(); 
+            System.out.print("Masukkan password anda    : ");
+            String passwordInput = input.nextLine();
+            System.out.println("===========================================================");
+            
+            for (User u : listAkun) {
+                if (emailInput.equals(u.email) && passwordInput.equals(u.password)) {
+                    return u; 
+                }
+            }
+            return null; 
+        }
+        
     public void logout() 
     {
         System.out.println("===========================================================");

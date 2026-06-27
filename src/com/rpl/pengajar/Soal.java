@@ -1,6 +1,6 @@
-package com.rpl.dosen;
+package com.rpl.pengajar;
 
-public class Soal extends Dosen 
+public class Soal extends Pengajar 
 {
     private int idSoal;
     private String pertanyaan;

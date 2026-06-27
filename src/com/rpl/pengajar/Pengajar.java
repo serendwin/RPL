@@ -1,10 +1,10 @@
-package com.rpl.dosen;
+package com.rpl.pengajar;
 
 import com.rpl.User;
 
-public class Dosen extends User 
+public class Pengajar extends User 
 {
-    public Dosen(int id_user, String namaUser,
+    public Pengajar(int id_user, String namaUser,
                  String email, String password) 
     {
 

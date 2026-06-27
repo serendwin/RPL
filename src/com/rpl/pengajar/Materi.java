@@ -1,6 +1,6 @@
-package com.rpl.dosen;
+package com.rpl.pengajar;
 
-public class Materi extends Dosen 
+public class Materi extends Pengajar 
 {
 
     private int idMateri;

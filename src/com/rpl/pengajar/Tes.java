@@ -1,6 +1,6 @@
-package com.rpl.dosen;
+package com.rpl.pengajar;
 
-public class Tes extends Dosen {
+public class Tes extends Pengajar {
 
     private int idTes;
     private String namaTes;
