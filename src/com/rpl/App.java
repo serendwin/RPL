@@ -7,6 +7,7 @@ import com.rpl.mahasiswa.Enrollment;
 import com.rpl.mahasiswa.Jawaban;
 import com.rpl.mahasiswa.Nilai;
 import com.rpl.pengajar.Materi;
+import com.rpl.pengajar.Pengajar;
 import com.rpl.pengajar.Soal;
 import com.rpl.pengajar.Tes;
 import com.rpl.mahasiswa.Mahasiswa;
@@ -399,6 +400,7 @@ public class App
         listAkun.add(Pengajar1);
         listAkun.add(Pengajar2);
         listAkun.add(Pengajar3);
+        listAkun.add(Lembagabahasa);
 
         boolean menuutama = false;
         while (!menuutama) 
@@ -963,8 +965,7 @@ public class App
                                                 System.out.println("1. Kelola Materi");
                                                 System.out.println("2. Kelola Tes");
                                                 System.out.println("3. Kelola Nilai Siswa");
-                                                System.out.println("4. Kegiatan Mengajar");                                                
-                                                System.out.println("5. Logout");
+                                                System.out.println("4. Logout");
                                                 System.out.println("-----------------------------------------------------------------");
                                                 System.out.print("Pilih Menu : ");
                                                 int menupengajar = input.nextInt();
@@ -1074,34 +1075,157 @@ public class App
                                                                                                 System.out.println("Materi tidak ditemukan atau Anda tidak berhak menghapus materi ini.");
                                                                                         }
                                                                                         break;
+                                                                                case 4:
+                                                                                        menuutamamateri = true;
+                                                                                        break;
+                                                                                default:
+                                                                                        System.out.println("Pilihan tidak valid!");
+                                                                                        System.out.println();                                                                                        
                                                                         }
                                                                 }
                                                                 break;
                                                         case 2:
-                                                                System.out.println("-> Fitur input nilai mahasiswa...");
+                                                                ArrayList<Tes> listTes = new ArrayList<>();
+                                                                System.out.println("=========================================================");
+                                                                System.out.println("                     BUAT TES BARU                       ");
+                                                                System.out.println("=========================================================");
+                                                                input.nextLine();                                                                 
+                                                                System.out.print("Masukkan ID Tes      : ");
+                                                                int idT = input.nextInt();
+                                                                input.nextLine();                                                                
+                                                                System.out.print("Masukkan Nama Tes    : ");
+                                                                String namaT = input.nextLine();
+                                                                System.out.print("Masukkan Tanggal Tes : ");
+                                                                String tglT = input.nextLine();
+                                                                System.out.print("Masukkan ID Kelas    : ");
+                                                                int idK = input.nextInt();
+                                                                input.nextLine();
+                                                                Tes tesBaru = new Tes(
+                                                                userlogin.id_user, userlogin.getNamaUser(), userlogin.email, userlogin.password,
+                                                                idT, namaT, tglT, idK
+                                                                );
+                                                                listTes.add(tesBaru); 
+                                                                tesBaru.buatTes();                                                                
                                                                 break;
                                                         case 3:
-                                                                userlogin.lihatProfil(); 
+                                                                ArrayList<Nilai> listNilai = new ArrayList<>();
+                                                                listNilai.add(nilaibinggris);
+                                                                listNilai.add(nilaibjerman);
+                                                                listNilai.add(nilaibchina); 
+                                                                boolean menuNilai = true;
+                                                                while (menuNilai) 
+                                                                {
+                                                                        System.out.println("=================================================================");
+                                                                        System.out.println("========================== KELOLA NILAI =========================");
+                                                                        System.out.println("=================================================================");
+                                                                        System.out.println("1. Lihat Daftar Nilai Mahasiswa");
+                                                                        System.out.println("2. Input Nilai Baru");
+                                                                        System.out.println("3. Kembali");
+                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                        System.out.print("Pilih Menu : ");
+                                                                        int pilihanNilai = input.nextInt();
+                                                                        System.out.println();                                                                        
+                                                                        switch (pilihanNilai) {
+                                                                        case 1: 
+                                                                                System.out.println("=================================================================");
+                                                                                System.out.println("                    DAFTAR NILAI MAHASISWA                       ");
+                                                                                System.out.println("=================================================================");
+                                                                                System.out.printf("%-10s %-20s %-10s %-10s\n", "ID NILAI", "NAMA MAHASISWA", "ID TES", "SKOR");
+                                                                                System.out.println("-----------------------------------------------------------------");
+                                                                                for (Nilai n : listNilai) 
+                                                                                {
+                                                                                String namaMahasiswa = "Tidak Diketahui";
+                                                                                for (User akun : listAkun) 
+                                                                                {
+                                                                                        if (akun.id_user == n.getIdUser()) 
+                                                                                        {
+                                                                                                namaMahasiswa = akun.getNamaUser();
+                                                                                                break;
+                                                                                        }
+                                                                                }
+                                                                                System.out.printf("%-10d %-20s %-10d %-10.2f\n", 
+                                                                                                n.getIdNilai(), namaMahasiswa, n.getIdTes(), n.hitungNilai());
+                                                                                }
+                                                                                System.out.println("=================================================================\n");
+                                                                                break;
+                                                                        case 2: 
+                                                                                System.out.println("=========================================================");
+                                                                                System.out.println("                     INPUT NILAI BARU                    ");
+                                                                                System.out.println("=========================================================");
+                                                                                System.out.print("Masukkan ID Nilai    : ");
+                                                                                int idN = input.nextInt();
+                                                                                System.out.print("Masukkan ID Mahasiswa: ");
+                                                                                int idMhs = input.nextInt();
+                                                                                System.out.print("Masukkan ID Tes      : ");
+                                                                                int idtes = input.nextInt();
+                                                                                System.out.print("Masukkan Skor Nilai  : ");
+                                                                                float skorMhs = input.nextFloat();
+                                                                                listNilai.add(new Nilai(idN, idMhs, idtes, skorMhs));
+                                                                                System.out.println("-> Nilai sukses disimpan!");
+                                                                                break;           
+                                                                        case 3:
+                                                                                menuNilai = false;
+                                                                                break;
+                                                                        }
+                                                                }
                                                                 break;
                                                         case 4:
-                                                                userlogin.logout();
                                                                 menuutamapengajar = false; 
                                                                 break;
                                                         default:
                                                                 System.out.println("Pilihan tidak valid!");
+                                                                System.out.println();
                                                 }
                                         }
                                 } 
-                                else if (userlogin != null && !userlogin.role.equalsIgnoreCase("Pengajar")) 
+                                else 
                                 {
-                                        System.out.println("Login Gagal: Akun Anda terdaftar sebagai Mahasiswa, bukan Pengajar!");
+                                        Pengajar1.logininvalid(); 
+                                        System.out.println();
+                                }
+                                break;
+                        case 3:    
+                                userlogin = Lembagabahasa.loginakun(listAkun); 
+                                if (userlogin != null && userlogin.role.equalsIgnoreCase("Staff Lembaga Bahasa")) 
+                                {
+                                        userlogin.loginberhasil();
+                                        System.out.println("Selamat datang " + userlogin.getNamaUser());
+                                        System.out.println("");  
+                                        boolean menuutamastafflembaga = true; 
+                                        while (menuutamastafflembaga) 
+                                        {
+                                                System.out.println("=================================================================");
+                                                System.out.println("========================= LEMBAGA BAHASA ========================");
+                                                System.out.println("=================================================================");
+                                                System.out.println("1. Kelola Kelas");
+                                                System.out.println("2. Kelola Sertifikat");
+                                                System.out.println("3. Logout");
+                                                System.out.println("-----------------------------------------------------------------");
+                                                System.out.print("Pilih Menu : ");       
+                                                int menustaflembaga = input.nextInt();
+                                                System.out.println();      
+                                                switch (menustaflembaga) 
+                                                {
+                                                        case 1: 
+
+                                                                break;
+                                                        case 2: 
+                                                                break; 
+                                                        case 3: 
+                                                                menuutamastafflembaga = true;
+                                                                break;
+                                                        default: 
+                                                                System.out.println("Pilihan tidak valid");
+                                                                System.out.println();
+                                                }   
+                                        }
                                 } 
                                 else 
                                 {
                                         Mahasiswa.logininvalid(); 
                                         System.out.println();
                                 }
-                                break;         
+                                break;
                 }
         }
         input.close();
