@@ -23,7 +23,7 @@ public class LembagaBahasa extends User {
     {
         System.out.println("Mengelola kurikulum");
     }
-
+  
     public void terbitSertifikat() {
         System.out.println("Sertifikat diterbitkan");
     }

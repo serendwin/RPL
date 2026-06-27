@@ -465,6 +465,10 @@ public class App
                                                                 boolean loginSukses = false;
                                                                 while (!loginSukses)
                                                                 {
+                                                                        ArrayList<Enrollment> listEnrollment = new ArrayList<>();
+                                                                        listEnrollment.add(enrollmentbinggris);
+                                                                        listEnrollment.add(enrollmentbjerman);
+                                                                        listEnrollment.add(enrollmentbchina);
                                                                         System.out.println("=================================================================");
                                                                         System.out.println("========================== MAHASISWA ============================");
                                                                         System.out.println("=================================================================");
@@ -492,21 +496,34 @@ public class App
                                                                                                 System.out.print("Pilih Kelas : ");
                                                                                                 int menudaftarkelas = input.nextInt();
                                                                                                 System.out.println();
+                                                                                                int idEnrollBaru = listEnrollment.size() + 1;
                                                                                                 switch (menudaftarkelas) 
                                                                                                 {
                                                                                                         case 1:
                                                                                                                 mhs.daftarKelas();
+                                                                                                                System.out.println("");
+                                                                                                                Enrollment enrollinggris = new Enrollment(idEnrollBaru, userlogin.id_user, 10);
+                                                                                                                listEnrollment.add(enrollinggris);                                                                                                                 
+                                                                                                                enrollinggris.daftar(); 
                                                                                                                 System.out.println("");
                                                                                                                 kembalidaftarkelas = true;
                                                                                                                 break;
                                                                                                         case 2:
                                                                                                                 mhs.daftarKelas();
                                                                                                                 System.out.println("");
+                                                                                                                Enrollment enrolljerman = new Enrollment(idEnrollBaru, userlogin.id_user, 20);
+                                                                                                                listEnrollment.add(enrolljerman);                                                                                                                 
+                                                                                                                enrolljerman.daftar(); 
+                                                                                                                System.out.println("");                                                                                                                
                                                                                                                 kembalidaftarkelas = true;
                                                                                                                 break;
                                                                                                         case 3:
                                                                                                                 mhs.daftarKelas();
                                                                                                                 System.out.println("");
+                                                                                                                Enrollment enrollchina = new Enrollment(idEnrollBaru, userlogin.id_user, 30);
+                                                                                                                listEnrollment.add(enrollchina);                                                                                                                 
+                                                                                                                enrollchina.daftar(); 
+                                                                                                                System.out.println("");                                                                                                                                                                                                                                
                                                                                                                 kembalidaftarkelas = true;
                                                                                                                 break;
                                                                                                         case 4:
