@@ -69,8 +69,10 @@ public class App
                 "marklee@gmail.ac.id",
                 "020809",                       
                 20,                              
-                "Bahasa Inggris", 
-                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                "Introduction to English Greetings", 
+                "Materi membahas salam dalam bahasa Inggris seperti" +
+                "Good Morning, Good Afternoon, Good Evening, Goodbye," + 
+                "dan penggunaannya dalam percakapan sehari-hari.",
                 10,                             
                 101                          
         );
@@ -81,8 +83,9 @@ public class App
                 "marklee@gmail.ac.id",
                 "020809",                       
                 21,                              
-                "Bahasa Inggris", 
-                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                "Introducing Yourself", 
+                "Materi membahas cara memperkenalkan diri dalam bahasa Inggris," +
+                "seperti menyebutkan nama, umur, asal, dan hobi menggunakan kalimat sederhana.",
                 11,                             
                 101                          
         );
@@ -93,8 +96,9 @@ public class App
                 "jisungpark@gmail.ac.id",
                 "050202",                       
                 20,                              
-                "Bahasa Jerman", 
-                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                "Salam dalam Bahasa Jerman", 
+                "Materi membahas ucapan dasar bahasa Jerman seperti Hallo, Guten Morgen," +
+                "Guten Tag, Guten Abend, Danke, Bitte, dan Tschüss.",
                 20,                             
                 102                          
         );
@@ -105,8 +109,9 @@ public class App
                 "jisungpark@gmail.ac.id",
                 "050202",                       
                 21,                              
-                "Bahasa Jerman", 
-                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                "Perkenalan Diri dalam Bahasa Jerman", 
+                "Materi membahas cara memperkenalkan diri menggunakan kalimat sederhana" +
+                "seperti Ich heiße, Ich komme aus, dan Ich bin Student.",
                 21,                             
                 102                          
         );
@@ -117,8 +122,9 @@ public class App
                 "yejihwang@gmail.ac.id",
                 "050203",                       
                 30,                              
-                "Bahasa Cina", 
-                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                "Percakapan Dasar Bahasa Mandarin", 
+                "Materi membahas kosakata dasar Mandarin seperti Ni Hao (Halo)," + 
+                "Xie Xie (Terima Kasih), Zai Jian (Sampai Jumpa), dan Wo Ai Ni (Aku Cinta Kamu).",
                 30,                             
                 103                          
         );
@@ -129,8 +135,9 @@ public class App
                 "yejihwang@gmail.ac.id",
                 "050203",                       
                 31,                              
-                "Bahasa Cina", 
-                "Materi membahas konsep OOP seperti Class, Object, Inheritance, Polymorphism, Encapsulation, dan Abstraction.",
+                "Perkenalan Diri dalam Bahasa Mandarin", 
+                "Materi membahas cara memperkenalkan diri menggunakan kalimat sederhana" + 
+                "seperti Wo Jiao, Wo Shi, dan Wo Lai Zi Indonesia.",
                 31,                             
                 103                          
         );
@@ -173,12 +180,12 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                             
                 21,                                     
-                "Apa kepanjangan dari OOP?",       
-                "A. Object Oriented Programming\n" +
-                "B. Open Object Program\n" +
-                "C. Object Operating Process\n" +
-                "D. Operator Oriented Program",         
-                "A",
+                "Apa arti kata Jerman “Guten Morgen”?",       
+                "A. Selamat malam\n" +
+                "B. Selamat pagi\n" +
+                "C. Terima kasih\n" +
+                "D. Sampai jumpa",         
+                "B",
                 "Jerman Class",                      
                 20                               
         );
@@ -189,11 +196,11 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                             
                 22,                                     
-                "Apa kepanjangan dari OOP?",       
-                "A. Object Oriented Programming\n" +
-                "B. Open Object Program\n" +
-                "C. Object Operating Process\n" +
-                "D. Operator Oriented Program",         
+                "Bagaimana cara mengucapkan “Terima kasih” dalam bahasa Jerman?",       
+                "A. Bitte\n" +
+                "B. Hallo\n" +
+                "C. Danke\n" +
+                "D. Tschüss",         
                 "A",
                 "Jerman Class",                      
                 21                             
@@ -205,12 +212,12 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                             
                 31,                                     
-                "Apa kepanjangan dari OOP?",       
-                "A. Object Oriented Programming\n" +
-                "B. Open Object Program\n" +
-                "C. Object Operating Process\n" +
-                "D. Operator Oriented Program",         
-                "A", 
+                "Apa arti kata Mandarin “Ni Hao (你好)”?",       
+                "A. Selamat tinggal\n" +
+                "B. Apa kabar\n" +
+                "C. Halo\n" +
+                "D. Terima kasih",         
+                "C", 
                 "China Class",                     
                 30                               
         );
@@ -221,11 +228,11 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                             
                 32,                                     
-                "Apa kepanjangan dari OOP?",       
-                "A. Object Oriented Programming\n" +
-                "B. Open Object Program\n" +
-                "C. Object Operating Process\n" +
-                "D. Operator Oriented Program",         
+                "Bagaimana cara mengucapkan “Terima kasih” dalam bahasa Mandarin?",       
+                "A. Xie Xie\n" +
+                "B. Zai Jian\n" +
+                "C. Ni Hao\n" +
+                "D. Wo Ai Ni",         
                 "A",    
                 "China Class",                  
                 31                              
@@ -237,7 +244,7 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                 
                 10,                          
-                "Ujian Java OOP",         
+                "Ujian Bahasa Inggris",         
                 "26-06-2026",             
                 10                        
         );
@@ -248,7 +255,7 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                 
                 20,                          
-                "Ujian Java OOP",         
+                "Ujian Bahasa Jerman",         
                 "26-06-2026",             
                 20                        
         );
@@ -259,7 +266,7 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                 
                 30,                          
-                "Ujian Java OOP",         
+                "Ujian Bahasa China",         
                 "26-06-2026",             
                 30                        
         );
@@ -306,7 +313,7 @@ public class App
               15,      
                 1,    
                 "Joko",
-                "Chiness Class" 
+                "Chinese Class" 
         );        
 
 
@@ -346,14 +353,14 @@ public class App
                 81,
                 1,
                 21,
-                "C"
+                "B"
         );
 
         Jawaban jawabanbjerman2 = new Jawaban(
                 82,
                 1,
                 22,
-                "D"
+                "C"
         );
 
 
@@ -361,14 +368,14 @@ public class App
                 91,
                 1,
                 31,
-                "A"
+                "C"
         );
 
         Jawaban jawabanbchina2 = new Jawaban(
                 92,
                 1,
                 32,
-                "B"
+                "A"
         );
 
         Nilai nilaibinggris = new Nilai(
@@ -439,6 +446,7 @@ public class App
                                         System.out.println("=================================================================");
                                         System.out.println("1. Registrasi Akun");
                                         System.out.println("2. Login Akun");
+                                        System.out.println("3. Logout");
                                         System.out.println("-----------------------------------------------------------------");
                                         System.out.print("Pilih Menu : ");
                                         int menumahasiswa = input.nextInt();
@@ -461,7 +469,8 @@ public class App
                                                         if (userlogin != null)
                                                         {
                                                                 userlogin.loginberhasil();
-                                                                System.out.println("");
+                                                                System.out.println("Selamat datang " + userlogin.getNamaUser());
+                                                                System.out.println();
                                                                 boolean loginSukses = false;
                                                                 while (!loginSukses)
                                                                 {
@@ -474,7 +483,8 @@ public class App
                                                                         System.out.println("=================================================================");
                                                                         System.out.println("1. Daftar Kelas");
                                                                         System.out.println("2. Kelas Saya");
-                                                                        System.out.println("3. Logout");
+                                                                        System.out.println("3. Lihat Profil");                                                                        
+                                                                        System.out.println("4. Logout");
                                                                         System.out.println("-----------------------------------------------------------------");
                                                                         System.out.print("Pilih Menu : ");
                                                                         int menumahasiswakelas = input.nextInt();
@@ -691,7 +701,6 @@ public class App
                                                                                                                                                         System.out.println();
                                                                                                                                                 }
                                                                                                                                                 tesbinggris.tutupTes();
-                                                                                                                                                System.out.println("==========================================================="); 
                                                                                                                                         break;
                                                                                                                                 case 4: 
                                                                                                                                         List<Nilai> daftarnilaibinggris = new ArrayList<>();
@@ -787,9 +796,6 @@ public class App
                                                                                                                                                 jawabanbjerman1. setJawaban(jawabanUser);
                                                                                                                                                 jawabanbjerman1.simpanJawaban();
                                                                                                                                                 jawabanbjerman1.periksaJawaban(daftarUjian[i].getJawabanBenar());
-                                                                                                                                                jawabanbjerman2.setJawaban(jawabanUser);
-                                                                                                                                                jawabanbjerman2.simpanJawaban();
-                                                                                                                                                jawabanbjerman2.periksaJawaban(daftarUjian[i].getJawabanBenar());
                                                                                                                                                 if (jawabanUser.equalsIgnoreCase(daftarUjian[i].getJawabanBenar())) 
                                                                                                                                                 {
                                                                                                                                                         System.out.println("-> Benar!");
@@ -800,7 +806,6 @@ public class App
                                                                                                                                                         System.out.println("-> Salah! (Jawaban benar: " + daftarUjian[i].getJawabanBenar() + ")");
                                                                                                                                                 }
                                                                                                                                                 System.out.println("Waktu menjawab: " + jawabanbjerman1.getWaktuJawab());
-                                                                                                                                                System.out.println("Waktu menjawab: " + jawabanbjerman2.getWaktuJawab());
                                                                                                                                                 System.out.println("===========================================================");
                                                                                                                                                 System.out.println();
                                                                                                                                         }                                                                                
@@ -809,7 +814,7 @@ public class App
                                                                                                                                                 System.out.println("===========================================================");
                                                                                                                                                 System.out.println("ID Mahasiswa   : " + Mahasiswa.getIdUser());
                                                                                                                                                 System.out.println("Nama Mahasiswa : " + Mahasiswa.getNamaUser());
-                                                                                                                                                System.out.println("Skor Diperoleh : " + nilaibjerman.hitungNilai() + " / 100.0"); 
+                                                                                                                                                System.out.println("Skor Diperoleh : " + totalNilai + " / 100.0"); 
                                                                                                                                                 System.out.println("Status Ujian   : " + (nilaibjerman.getSkor() >= 70 ? "LULUS" : "REMEDIAL"));
                                                                                                                                                 System.out.println("===========================================================");
                                                                                                                                                 System.out.println();
@@ -821,14 +826,15 @@ public class App
                                                                                                                                                 {
                                                                                                                                                         System.out.println("Soal Nomor " + (i + 1));
                                                                                                                                                         System.out.println("Pertanyaan    : " + daftarUjian[i].getPertanyaan());
-                                                                                                                                                        System.out.println("Jawaban Anda  : " + daftarJawaban[i].getJawaban() + 
-                                                                                                                                                                        " (" + (daftarJawaban[i].isStatusBenar() ? "BENAR" : "SALAH") + ")");
-                                                                                                                                                        System.out.println("Kunci Jawaban : " + daftarUjian[i].getJawabanBenar());
+                                                                                                                                                        String jwbUser = daftarJawaban[i].getJawaban();
+                                                                                                                                                        String kunci = daftarUjian[i].getJawabanBenar();
+                                                                                                                                                        String status = jwbUser.equalsIgnoreCase(kunci) ? "BENAR" : "SALAH";
+                                                                                                                                                        System.out.println("Jawaban Anda  : " + jwbUser + " (" + status + ")");
+                                                                                                                                                        System.out.println("Kunci Jawaban : " + kunci);
                                                                                                                                                         System.out.println("===========================================================");
                                                                                                                                                         System.out.println();
                                                                                                                                                 }
                                                                                                                                                 tesbinggris.tutupTes();
-                                                                                                                                                System.out.println("==========================================================="); 
                                                                                                                                         break;
                                                                                                                                 case 4: 
                                                                                                                                         List<Nilai> daftarnilaibjerman = new ArrayList<>();
@@ -837,7 +843,7 @@ public class App
                                                                                                                                         sertifikatbjerman.lihatNilai();
                                                                                                                                         break; 
                                                                                                                                 case 5:
-                                                                                                                                        englishclass = true;
+                                                                                                                                        germanyclass = true;
                                                                                                                                         break;
                                                                                                                                 default: 
                                                                                                                                         System.out.println("Pilihan tidak valid!");
@@ -924,9 +930,6 @@ public class App
                                                                                                                                                 jawabanbchina1. setJawaban(jawabanUser);
                                                                                                                                                 jawabanbchina1.simpanJawaban();
                                                                                                                                                 jawabanbchina1.periksaJawaban(daftarUjian[i].getJawabanBenar());
-                                                                                                                                                jawabanbchina2.setJawaban(jawabanUser);
-                                                                                                                                                jawabanbchina2.simpanJawaban();
-                                                                                                                                                jawabanbchina2.periksaJawaban(daftarUjian[i].getJawabanBenar());
                                                                                                                                                 if (jawabanUser.equalsIgnoreCase(daftarUjian[i].getJawabanBenar())) 
                                                                                                                                                 {
                                                                                                                                                         System.out.println("-> Benar!");
@@ -937,7 +940,6 @@ public class App
                                                                                                                                                         System.out.println("-> Salah! (Jawaban benar: " + daftarUjian[i].getJawabanBenar() + ")");
                                                                                                                                                 }
                                                                                                                                                 System.out.println("Waktu menjawab: " + jawabanbchina1.getWaktuJawab());
-                                                                                                                                                System.out.println("Waktu menjawab: " + jawabanbchina2.getWaktuJawab());
                                                                                                                                                 System.out.println("===========================================================");
                                                                                                                                                 System.out.println();
                                                                                                                                         }                                                                                
@@ -946,7 +948,7 @@ public class App
                                                                                                                                                 System.out.println("===========================================================");
                                                                                                                                                 System.out.println("ID Mahasiswa   : " + Mahasiswa.getIdUser());
                                                                                                                                                 System.out.println("Nama Mahasiswa : " + Mahasiswa.getNamaUser());
-                                                                                                                                                System.out.println("Skor Diperoleh : " + nilaibchina.hitungNilai() + " / 100.0"); 
+                                                                                                                                                System.out.println("Skor Diperoleh : " + totalNilai + " / 100.0"); 
                                                                                                                                                 System.out.println("Status Ujian   : " + (nilaibchina.getSkor() >= 70 ? "LULUS" : "REMEDIAL"));
                                                                                                                                                 System.out.println("===========================================================");
                                                                                                                                                 System.out.println();
@@ -958,14 +960,15 @@ public class App
                                                                                                                                                 {
                                                                                                                                                         System.out.println("Soal Nomor " + (i + 1));
                                                                                                                                                         System.out.println("Pertanyaan    : " + daftarUjian[i].getPertanyaan());
-                                                                                                                                                        System.out.println("Jawaban Anda  : " + daftarJawaban[i].getJawaban() + 
-                                                                                                                                                                        " (" + (daftarJawaban[i].isStatusBenar() ? "BENAR" : "SALAH") + ")");
-                                                                                                                                                        System.out.println("Kunci Jawaban : " + daftarUjian[i].getJawabanBenar());
+                                                                                                                                                        String jwbUser = daftarJawaban[i].getJawaban();
+                                                                                                                                                        String kunci = daftarUjian[i].getJawabanBenar();
+                                                                                                                                                        String status = jwbUser.equalsIgnoreCase(kunci) ? "BENAR" : "SALAH";
+                                                                                                                                                        System.out.println("Jawaban Anda  : " + jwbUser + " (" + status + ")");
+                                                                                                                                                        System.out.println("Kunci Jawaban : " + kunci);
                                                                                                                                                         System.out.println("===========================================================");
                                                                                                                                                         System.out.println();
                                                                                                                                                 }
                                                                                                                                                 tesbinggris.tutupTes();
-                                                                                                                                                System.out.println("==========================================================="); 
                                                                                                                                         break;
                                                                                                                                 case 4: 
                                                                                                                                         List<Nilai> daftarnilaibchina = new ArrayList<>();
@@ -980,13 +983,25 @@ public class App
                                                                                                                                         System.out.println("Pilihan tidak valid!");
                                                                                                                                         System.out.println();                                                                                                        
                                                                                                                         }                                                                                                                                             
-                                                                                                                }                                                                        
+                                                                                                                } 
+                                                                                                                break;
+                                                                                                        case 4: 
+                                                                                                                kembalikelas = true;
+                                                                                                                break;
+                                                                                                        default: 
+                                                                                                                System.out.println("Pilihan tidak valid!");
+                                                                                                                System.out.println();                                                                                                                                                                                                                       
                                                                                                 }
                                                                                         }
                                                                                         break;
+                                                                                case 3: 
+                                                                                        userlogin.lihatProfil();
+                                                                                        break;
+                                                                                default:
+                                                                                        System.out.println("Pilihan tidak valid!");
+                                                                                        System.out.println();                                                                                        
                                                                         }   
                                                                 }
-
                                                         }
                                                         else 
                                                         {
@@ -994,6 +1009,12 @@ public class App
                                                                 System.out.println();
                                                         }
                                                         break;
+                                                case 3: 
+                                                        kembalimahasiswa = true;
+                                                        break;
+                                                default:
+                                                        System.out.println("Pilihan tidak valid!");
+                                                        System.out.println(); 
                                         }
                                 }
                                 break;
@@ -1071,6 +1092,7 @@ public class App
                                                                                         userlogin.id_user        
                                                                                         );
                                                                                         listMateri.add(materiBaru); 
+                                                                                        System.out.println();
                                                                                         materiBaru.tambahMateri();
                                                                                         break;
                                                                                 case 2:
@@ -1112,6 +1134,7 @@ public class App
                                                                                                 if (m.getIdMateri() == idCariHapus && m.id_user == userlogin.id_user) 
                                                                                                 {
                                                                                                         m.hapusMateri();
+                                                                                                        System.out.println();
                                                                                                         listMateri.remove(i);
                                                                                                         System.out.println("-> Materi dengan ID " + idCariHapus + " berhasil dihapus!");
                                                                                                         ditemukanHapus = true;
@@ -1120,7 +1143,7 @@ public class App
                                                                                         }
                                                                                         if (!ditemukanHapus) 
                                                                                         {
-                                                                                                System.out.println("Materi tidak ditemukan atau Anda tidak berhak menghapus materi ini.");
+                                                                                                System.out.println("Gagal mengupdate materi");
                                                                                         }
                                                                                         break;
                                                                                 case 4:
@@ -1153,6 +1176,7 @@ public class App
                                                                 idT, namaT, tglT, idK
                                                                 );
                                                                 listTes.add(tesBaru); 
+                                                                System.out.println();
                                                                 tesBaru.buatTes();                                                                
                                                                 break;
                                                         case 3:
@@ -1210,6 +1234,7 @@ public class App
                                                                                 float skorMhs = input.nextFloat();
                                                                                 listNilai.add(new Nilai(idN, idMhs, idtes, skorMhs));
                                                                                 System.out.println("-> Nilai sukses disimpan!");
+                                                                                System.out.println();
                                                                                 break;           
                                                                         case 3:
                                                                                 menuNilai = false;
@@ -1270,6 +1295,7 @@ public class App
                                                                         switch (subkelas) 
                                                                         {
                                                                                 case 1: 
+                                                                                        System.out.println();
                                                                                         System.out.println("=================================================================");
                                                                                         System.out.println("========================= KELAS BAHASA ==========================");
                                                                                         System.out.println("=================================================================");

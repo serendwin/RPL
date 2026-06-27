@@ -96,9 +96,9 @@ public class Sertifikat {
     }
 
     public void lihatNilai() {
-        System.out.println("=================================");
-        System.out.println("         SERTIFIKAT");
-        System.out.println("=================================");
+        System.out.println("=================================================================");
+        System.out.println("                            SERTIFIKAT");
+        System.out.println("=================================================================");
         System.out.println("ID Sertifikat   : " + idSertifikat);
         System.out.println("ID User         : " + idUser);
         System.out.println("Nama User       : " + namaUser);
@@ -106,7 +106,7 @@ public class Sertifikat {
         System.out.printf("Nilai Akhir     : %.2f%n", nilaiAkhir);
         System.out.println("Tanggal Terbit  : " + tanggalTerbit);
         System.out.println("Keterangan      : " + statusValidasi);
-        System.out.println("=================================");
+        System.out.println("=================================================================");
         System.out.println();
     }
 

@@ -49,47 +49,47 @@ public class Soal extends Pengajar
     
     public void tambahSoal() 
     {
-        System.out.println("===========================================================");
-        System.out.println("                  SOAL BERHASIL DITAMBAH");
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
+        System.out.println("                        SOAL BERHASIL DITAMBAH");
+        System.out.println("=================================================================");
         System.out.println("ID Soal      : " + idSoal);
         System.out.println("Kelas        : " + namaKelas);
         System.out.println("Pengajar     : " + namaPengajar);
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
         System.out.println();
     }
 
     public void editSoal() {
-        System.out.println("===========================================================");
-        System.out.println("                   SOAL BERHASIL DIEDIT");
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
+        System.out.println("                      SOAL BERHASIL DIEDIT");
+        System.out.println("=================================================================");
         System.out.println("ID Soal      : " + idSoal);
         System.out.println("Kelas        : " + namaKelas);
         System.out.println("Pengajar     : " + namaPengajar);
         System.out.println("Status       : Data soal diperbarui");
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
         System.out.println();
     }
 
     public void hapusSoal() {
-        System.out.println("===========================================================");
-        System.out.println("                  SOAL BERHASIL DIHAPUS");
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
+        System.out.println("                    SOAL BERHASIL DIHAPUS");
+        System.out.println("=================================================================");
         System.out.println("ID Soal      : " + idSoal);
         System.out.println("Kelas        : " + namaKelas);
         System.out.println("Pengajar     : " + namaPengajar);
         System.out.println("Status       : Soal telah dihapus");
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
         System.out.println();
     }
 
     public void eksekusiUjian(java.util.Scanner input) 
     {
-        System.out.println("===========================================================");
-        System.out.println("                    MULAI MENGERJAKAN SOAL                 ");
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
+        System.out.println("                      MULAI MENGERJAKAN SOAL                 ");
+        System.out.println("=================================================================");
         System.out.println("ID Soal      : " + this.idSoal);
-        System.out.println("-----------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------");
         System.out.println("Pertanyaan: " + this.pertanyaan);
         System.out.println();
         String[] daftarPilihan = this.pilihan.split(",");
@@ -97,10 +97,10 @@ public class Soal extends Pengajar
         {
             System.out.println("   " + opsi.trim());
         }    
-        System.out.println("-----------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------");
         System.out.print("Masukkan Jawaban Anda (A/B/C/D): ");
         String jawabanUser = input.next();    
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
         if (jawabanUser.equalsIgnoreCase(this.jawabanBenar)) {
             System.out.println("Hasil: JAWABAN ANDA BENAR");
             System.out.println("Nilai: 100");
@@ -109,7 +109,7 @@ public class Soal extends Pengajar
             System.out.println("Jawaban yang benar adalah: " + this.jawabanBenar);
             System.out.println("Nilai: 0");
         }
-        System.out.println("===========================================================");
+        System.out.println("=================================================================");
         System.out.println();
     }    
 }
