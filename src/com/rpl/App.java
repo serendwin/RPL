@@ -501,29 +501,53 @@ public class App
                                                                                                 {
                                                                                                         case 1:
                                                                                                                 mhs.daftarKelas();
-                                                                                                                System.out.println("");
                                                                                                                 Enrollment enrollinggris = new Enrollment(idEnrollBaru, userlogin.id_user, 10);
                                                                                                                 listEnrollment.add(enrollinggris);                                                                                                                 
                                                                                                                 enrollinggris.daftar(); 
                                                                                                                 System.out.println("");
+                                                                                                                stafflembaga.validasiDaftar();
+                                                                                                                System.out.println("-----------------------------------------------------------------");
+                                                                                                                System.out.println("                 STRUK VERIFIKASI PENDAFTARAN (ACC)              ");
+                                                                                                                System.out.println("-----------------------------------------------------------------");
+                                                                                                                System.out.printf(" No. Transaksi (Enroll ID) : %d\n", enrollinggris.getIdEnrollment());
+                                                                                                                System.out.printf(" ID Mahasiswa              : %d\n", enrollinggris.getIdUser());
+                                                                                                                System.out.printf(" ID Kelas Pilihan          : %d (Bahasa Inggris)\n", enrollinggris.getIdKelas());
+                                                                                                                System.out.println(" Status Pendaftaran        : DISETUJUI");
+                                                                                                                System.out.println("=================================================================\n");
                                                                                                                 kembalidaftarkelas = true;
                                                                                                                 break;
                                                                                                         case 2:
                                                                                                                 mhs.daftarKelas();
-                                                                                                                System.out.println("");
                                                                                                                 Enrollment enrolljerman = new Enrollment(idEnrollBaru, userlogin.id_user, 20);
                                                                                                                 listEnrollment.add(enrolljerman);                                                                                                                 
                                                                                                                 enrolljerman.daftar(); 
-                                                                                                                System.out.println("");                                                                                                                
+                                                                                                                System.out.println("");  
+                                                                                                                stafflembaga.validasiDaftar();
+                                                                                                                System.out.println("-----------------------------------------------------------------");
+                                                                                                                System.out.println("                 STRUK VERIFIKASI PENDAFTARAN (ACC)              ");
+                                                                                                                System.out.println("-----------------------------------------------------------------");
+                                                                                                                System.out.printf(" No. Transaksi (Enroll ID) : %d\n", enrolljerman.getIdEnrollment());
+                                                                                                                System.out.printf(" ID Mahasiswa              : %d\n", enrolljerman.getIdUser());
+                                                                                                                System.out.printf(" ID Kelas Pilihan          : %d (Bahasa Jeerman)\n", enrolljerman.getIdKelas());
+                                                                                                                System.out.println(" Status Pendaftaran        : DISETUJUI");
+                                                                                                                System.out.println("=================================================================\n");                                                                                                                                                                                                                              
                                                                                                                 kembalidaftarkelas = true;
                                                                                                                 break;
                                                                                                         case 3:
                                                                                                                 mhs.daftarKelas();
-                                                                                                                System.out.println("");
                                                                                                                 Enrollment enrollchina = new Enrollment(idEnrollBaru, userlogin.id_user, 30);
                                                                                                                 listEnrollment.add(enrollchina);                                                                                                                 
                                                                                                                 enrollchina.daftar(); 
-                                                                                                                System.out.println("");                                                                                                                                                                                                                                
+                                                                                                                System.out.println(""); 
+                                                                                                                stafflembaga.validasiDaftar();
+                                                                                                                System.out.println("-----------------------------------------------------------------");
+                                                                                                                System.out.println("                 STRUK VERIFIKASI PENDAFTARAN (ACC)              ");
+                                                                                                                System.out.println("-----------------------------------------------------------------");
+                                                                                                                System.out.printf(" No. Transaksi (Enroll ID) : %d\n", enrollchina.getIdEnrollment());
+                                                                                                                System.out.printf(" ID Mahasiswa              : %d\n", enrollchina.getIdUser());
+                                                                                                                System.out.printf(" ID Kelas Pilihan          : %d (Bahasa China)\n", enrollchina.getIdKelas());
+                                                                                                                System.out.println(" Status Pendaftaran        : DISETUJUI");
+                                                                                                                System.out.println("=================================================================\n");                                                                                                                                                                                                                                                                                                                                                
                                                                                                                 kembalidaftarkelas = true;
                                                                                                                 break;
                                                                                                         case 4:
@@ -628,9 +652,6 @@ public class App
                                                                                                                                                 jawabanbinggris1. setJawaban(jawabanUser);
                                                                                                                                                 jawabanbinggris1.simpanJawaban();
                                                                                                                                                 jawabanbinggris1.periksaJawaban(daftarUjian[i].getJawabanBenar());
-                                                                                                                                                jawabanbinggris2.setJawaban(jawabanUser);
-                                                                                                                                                jawabanbinggris2.simpanJawaban();
-                                                                                                                                                jawabanbinggris2.periksaJawaban(daftarUjian[i].getJawabanBenar());
                                                                                                                                                 if (jawabanUser.equalsIgnoreCase(daftarUjian[i].getJawabanBenar())) 
                                                                                                                                                 {
                                                                                                                                                         System.out.println("-> Benar!");
@@ -640,7 +661,6 @@ public class App
                                                                                                                                                 {
                                                                                                                                                         System.out.println("-> Salah! (Jawaban benar: " + daftarUjian[i].getJawabanBenar() + ")");
                                                                                                                                                 }
-                                                                                                                                                System.out.println("Waktu menjawab: " + jawabanbinggris1.getWaktuJawab());
                                                                                                                                                 System.out.println("Waktu menjawab: " + jawabanbinggris2.getWaktuJawab());
                                                                                                                                                 System.out.println("===========================================================");
                                                                                                                                                 System.out.println();
@@ -650,7 +670,7 @@ public class App
                                                                                                                                                 System.out.println("===========================================================");
                                                                                                                                                 System.out.println("ID Mahasiswa   : " + Mahasiswa.getIdUser());
                                                                                                                                                 System.out.println("Nama Mahasiswa : " + Mahasiswa.getNamaUser());
-                                                                                                                                                System.out.println("Skor Diperoleh : " + nilaibinggris.hitungNilai() + " / 100.0"); 
+                                                                                                                                                System.out.println("Skor Diperoleh : " + totalNilai + " / 100.0"); 
                                                                                                                                                 System.out.println("Status Ujian   : " + (nilaibinggris.getSkor() >= 70 ? "LULUS" : "REMEDIAL"));
                                                                                                                                                 System.out.println("===========================================================");
                                                                                                                                                 System.out.println();
@@ -662,9 +682,11 @@ public class App
                                                                                                                                                 {
                                                                                                                                                         System.out.println("Soal Nomor " + (i + 1));
                                                                                                                                                         System.out.println("Pertanyaan    : " + daftarUjian[i].getPertanyaan());
-                                                                                                                                                        System.out.println("Jawaban Anda  : " + daftarJawaban[i].getJawaban() + 
-                                                                                                                                                                        " (" + (daftarJawaban[i].isStatusBenar() ? "BENAR" : "SALAH") + ")");
-                                                                                                                                                        System.out.println("Kunci Jawaban : " + daftarUjian[i].getJawabanBenar());
+                                                                                                                                                        String jwbUser = daftarJawaban[i].getJawaban();
+                                                                                                                                                        String kunci = daftarUjian[i].getJawabanBenar();
+                                                                                                                                                        String status = jwbUser.equalsIgnoreCase(kunci) ? "BENAR" : "SALAH";
+                                                                                                                                                        System.out.println("Jawaban Anda  : " + jwbUser + " (" + status + ")");
+                                                                                                                                                        System.out.println("Kunci Jawaban : " + kunci);
                                                                                                                                                         System.out.println("===========================================================");
                                                                                                                                                         System.out.println();
                                                                                                                                                 }
@@ -969,6 +991,7 @@ public class App
                                                         else 
                                                         {
                                                                 Mahasiswa.logininvalid();
+                                                                System.out.println();
                                                         }
                                                         break;
                                         }

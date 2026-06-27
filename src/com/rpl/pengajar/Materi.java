@@ -104,5 +104,6 @@ public class Materi extends Pengajar
         System.out.println("ID Kelas   : " + idKelas);
         System.out.println("ID Pengajar: " + idPengajar);
         System.out.println("===========================================================");
+        System.out.println();
     }
 }

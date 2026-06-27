@@ -44,16 +44,12 @@ public class User {
             System.out.print("Masukan password anda    : ");
             this.password = input.nextLine();  
             System.out.println("===========================================================");
-            System.out.println();
             if (!nama_user.isEmpty() && !email.isEmpty() && !password.isEmpty()) 
             {
-                registrasiberhasil();
-                loginberhasil(); 
                 return true;     
             } 
             else 
             {
-                registrasiinvalid();
                 return false;
             }
         }

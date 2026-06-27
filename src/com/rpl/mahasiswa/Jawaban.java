@@ -59,7 +59,7 @@ public class Jawaban {
 
     // Method simpan jawaban
     public void simpanJawaban() {
-        System.out.println("Jawaban berhasil disimpan.");
+        System.out.println();
     }
 
     // Method cek jawaban
