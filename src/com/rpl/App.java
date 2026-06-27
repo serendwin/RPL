@@ -498,6 +498,10 @@ public class App
                                                                         switch (menumahasiswakelas) 
                                                                         {        
                                                                                 case 1:
+                                                                                        ArrayList<Enrollment> listEnrollment1 = new ArrayList<>();
+                                                                                        listEnrollment1.add(enrollmentbinggris);
+                                                                                        listEnrollment1.add(enrollmentbjerman);
+                                                                                        listEnrollment1.add(enrollmentbchina);                                                                                        
                                                                                         boolean kembalidaftarkelas = false;
                                                                                         while (!kembalidaftarkelas)
                                                                                         {
@@ -512,12 +516,11 @@ public class App
                                                                                                 System.out.print("Pilih Kelas : ");
                                                                                                 int menudaftarkelas = input.nextInt();
                                                                                                 System.out.println();
-                                                                                                int idEnrollBaru = listEnrollment.size() + 1;
                                                                                                 switch (menudaftarkelas) 
                                                                                                 {
                                                                                                         case 1:
                                                                                                                 mhs.daftarKelas();
-                                                                                                                Enrollment enrollinggris = new Enrollment(idEnrollBaru, userlogin.getIdUser(), 10);
+                                                                                                                Enrollment enrollinggris = new Enrollment(41, Mahasiswa.getIdUser(), 10);
                                                                                                                 listEnrollment.add(enrollinggris);                                                                                                                 
                                                                                                                 enrollinggris.daftar(); 
                                                                                                                 System.out.println("");
@@ -535,7 +538,7 @@ public class App
                                                                                                                 break;
                                                                                                         case 2:
                                                                                                                 mhs.daftarKelas();
-                                                                                                                Enrollment enrolljerman = new Enrollment(idEnrollBaru, userlogin.getIdUser(), 20);
+                                                                                                                Enrollment enrolljerman = new Enrollment(51, Mahasiswa.getIdUser(), 10);
                                                                                                                 listEnrollment.add(enrolljerman);                                                                                                                 
                                                                                                                 enrolljerman.daftar(); 
                                                                                                                 System.out.println("");  
@@ -553,7 +556,7 @@ public class App
                                                                                                                 break;
                                                                                                         case 3:
                                                                                                                 mhs.daftarKelas();
-                                                                                                                Enrollment enrollchina = new Enrollment(idEnrollBaru, userlogin.getIdUser(), 30);
+                                                                                                                Enrollment enrollchina = new Enrollment(61, Mahasiswa.getIdUser(), 10);
                                                                                                                 listEnrollment.add(enrollchina);                                                                                                                 
                                                                                                                 enrollchina.daftar(); 
                                                                                                                 System.out.println(""); 
