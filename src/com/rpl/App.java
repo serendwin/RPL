@@ -66,8 +66,8 @@ public class App
                 "020809",                       
                 20,                              
                 "Introduction to English Greetings", 
-                "Materi membahas salam dalam bahasa Inggris seperti" +
-                "Good Morning, Good Afternoon, Good Evening, Goodbye," + 
+                "Materi membahas salam dalam bahasa Inggris seperti\n" +
+                "Good Morning, Good Afternoon, Good Evening, Goodbye,\n" + 
                 "dan penggunaannya dalam percakapan sehari-hari.",
                 10,                             
                 101                          
@@ -80,8 +80,9 @@ public class App
                 "020809",                       
                 21,                              
                 "Introducing Yourself", 
-                "Materi membahas cara memperkenalkan diri dalam bahasa Inggris," +
-                "seperti menyebutkan nama, umur, asal, dan hobi menggunakan kalimat sederhana.",
+                "Materi membahas cara memperkenalkan diri dalam\n" + 
+                "bahasa Inggris,seperti menyebutkan nama, umur,\n" +
+                "asal, dan hobi menggunakan kalimat sederhana.",
                 11,                             
                 101                          
         );
@@ -93,8 +94,9 @@ public class App
                 "050202",                       
                 20,                              
                 "Salam dalam Bahasa Jerman", 
-                "Materi membahas ucapan dasar bahasa Jerman seperti Hallo, Guten Morgen," +
-                "Guten Tag, Guten Abend, Danke, Bitte, dan Tschüss.",
+                "Materi membahas ucapan dasar bahasa Jerman seperti\n" + 
+                "Hallo, Guten Morgen,Guten Tag, Guten Abend, Danke,\n" +
+                "Bitte, dan Tschüss.",
                 20,                             
                 102                          
         );
@@ -106,8 +108,9 @@ public class App
                 "050202",                       
                 21,                              
                 "Perkenalan Diri dalam Bahasa Jerman", 
-                "Materi membahas cara memperkenalkan diri menggunakan kalimat sederhana" +
-                "seperti Ich heiße, Ich komme aus, dan Ich bin Student.",
+                "Materi membahas cara memperkenalkan diri\n" + 
+                "menggunakan kalimat sederhana seperti\n" +
+                "Ich heiße, Ich komme aus, dan Ich bin Student.",
                 21,                             
                 102                          
         );
@@ -119,8 +122,10 @@ public class App
                 "050203",                       
                 30,                              
                 "Percakapan Dasar Bahasa Mandarin", 
-                "Materi membahas kosakata dasar Mandarin seperti Ni Hao (Halo)," + 
-                "Xie Xie (Terima Kasih), Zai Jian (Sampai Jumpa), dan Wo Ai Ni (Aku Cinta Kamu).",
+                "Materi membahas kosakata dasar Mandarin\n" + 
+                "seperti Ni Hao (Halo),\n" + 
+                "Xie Xie (Terima Kasih), Zai Jian (Sampai Jumpa),\n" + 
+                "dan Wo Ai Ni (Aku Cinta Kamu).",
                 30,                             
                 103                          
         );
@@ -132,8 +137,9 @@ public class App
                 "050203",                       
                 31,                              
                 "Perkenalan Diri dalam Bahasa Mandarin", 
-                "Materi membahas cara memperkenalkan diri menggunakan kalimat sederhana" + 
-                "seperti Wo Jiao, Wo Shi, dan Wo Lai Zi Indonesia.",
+                "Materi membahas cara memperkenalkan diri menggunakan\n" +
+                "kalimat sederhana seperti Wo Jiao, Wo Shi,\n" + 
+                "dan Wo Lai Zi Indonesia.",
                 31,                             
                 103                          
         );
@@ -144,7 +150,8 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                                 
                 11,                                      
-                "Yesterday, my sister ______ to the library to borrow some novels.",      
+                "Yesterday, my sister______\n" + 
+                "to the library to borrow some novels.",      
                 "A. goes\n" +
                 "B. went\n" +
                 "C. gone\n" +
@@ -160,7 +167,8 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                             
                 12,                                     
-                "The classroom was very ______ because all the students were studying quietly.",     
+                "The classroom was very______\n"+
+                "because all the students were studying quietly.",     
                 "A. noisy\n" +
                 "B. crowded\n" +
                 "C. peaceful\n" +
@@ -192,12 +200,13 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                             
                 22,                                     
-                "Bagaimana cara mengucapkan “Terima kasih” dalam bahasa Jerman?",       
+                "Bagaimana cara mengucapkan\n" + 
+                "“Terima kasih” dalam bahasa Jerman?",       
                 "A. Bitte\n" +
                 "B. Hallo\n" +
                 "C. Danke\n" +
                 "D. Tschüss",         
-                "A",
+                "C",
                 "Jerman Class",                      
                 21                             
         );        
@@ -224,7 +233,8 @@ public class App
                 "kijokogawlbodo@gmail.ac.id",                    
                 "66666",                             
                 32,                                     
-                "Bagaimana cara mengucapkan “Terima kasih” dalam bahasa Mandarin?",       
+                "Bagaimana cara mengucapkan\n" + 
+                "“Terima kasih” dalam bahasa Mandarin?",       
                 "A. Xie Xie\n" +
                 "B. Zai Jian\n" +
                 "C. Ni Hao\n" +
@@ -648,7 +658,7 @@ public class App
                                                                                                                                         Jawaban[] daftarJawaban = {jawabanbinggris1, jawabanbinggris2};    
                                                                                                                                         int totalNilai = 0;
                                                                                                                                         System.out.println("=================================================================");
-                                                                                                                                        System.out.println("                MULAI UJIAN BAHASA INGGRIS                 ");
+                                                                                                                                        System.out.println("                    MULAI UJIAN BAHASA INGGRIS                 ");
                                                                                                                                         System.out.println("=================================================================");
                                                                                                                                         System.out.println("Nama Kelas: " + kelasbinggris.getNamaKelas());
                                                                                                                                         System.out.println("Nama Pengajar: " + Pengajar1.getNamaUser());
@@ -948,7 +958,7 @@ public class App
                                                                                                                                                 System.out.println();
                                                                                                                                         }                                                                                
                                                                                                                                                 System.out.println("=================================================================");
-                                                                                                                                                System.out.println("                            REKAP NILAI AKHIR                    ");
+                                                                                                                                                System.out.println("                          REKAP NILAI AKHIR                    ");
                                                                                                                                                 System.out.println("=================================================================");
                                                                                                                                                 System.out.println("ID Mahasiswa   : " + Mahasiswa.getIdUser());
                                                                                                                                                 System.out.println("Nama Mahasiswa : " + Mahasiswa.getNamaUser());
@@ -999,10 +1009,10 @@ public class App
                                                                                         }
                                                                                         break;
                                                                                 case 3: 
-                                                                                        userlogin.lihatProfil();
+                                                                                        Mahasiswa.lihatProfil();
                                                                                         break;
                                                                                 case 4:
-                                                                                        loginSukses = false;
+                                                                                        loginSukses = true;
                                                                                         break;
                                                                                 default:
                                                                                         System.out.println("Pilihan tidak valid!");
@@ -1017,7 +1027,7 @@ public class App
                                                         }
                                                         break;
                                                 case 3: 
-                                                        kembalimahasiswa = false;
+                                                        kembalimahasiswa = true;
                                                         break;
                                                 default:
                                                         System.out.println("Pilihan tidak valid!");
@@ -1079,7 +1089,7 @@ public class App
                                                                         {
                                                                                 case 1: 
                                                                                         System.out.println("=================================================================");
-                                                                                        System.out.println("                           TAMBAH MATERI NEW                   ");
+                                                                                        System.out.println("                         TAMBAH MATERI NEW                   ");
                                                                                         System.out.println("=================================================================");
                                                                                         input.nextLine(); 
                                                                                         System.out.print("Masukkan ID Materi baru : ");
@@ -1103,6 +1113,7 @@ public class App
                                                                                         idKel,                  
                                                                                         userlogin.getIdUser()        
                                                                                         );
+                                                                                        System.out.println("=================================================================");
                                                                                         listMateri.add(materiBaru); 
                                                                                         System.out.println();
                                                                                         materiBaru.tambahMateri();
@@ -1120,16 +1131,16 @@ public class App
                                                                                                 if (m.getIdMateri() == idCariEdit && m.getIdUser() == userlogin.getIdUser()) 
                                                                                                 {
                                                                                                         ditemukanEdit = true;                                                                                                        
-                                                                                                        System.out.print("Masukkan Judul Bahasa Baru [" + m.getJudul() + "]: ");
+                                                                                                        System.out.print("Masukkan Judul Materi Baru [" + m.getJudul() + "]: ");
                                                                                                         m.setJudul(input.nextLine());
                                                                                                         System.out.print("Masukkan Isi Materi Baru: ");
                                                                                                         m.setIsiMateri(input.nextLine());
+                                                                                                        System.out.println("=================================================================");
+                                                                                                        System.out.println();
                                                                                                         m.editMateri();
                                                                                                         break;
                                                                                                 }
-                                                                                        }
-                                                                                        System.out.println("=================================================================");
-                                                                                        System.out.println();     
+                                                                                        }  
                                                                                         if (!ditemukanEdit) 
                                                                                         {
                                                                                                 System.out.println("Materi tidak ditemukan atau Anda tidak memiliki akses mengedit materi ini.");
@@ -1142,6 +1153,8 @@ public class App
                                                                                         System.out.print("Masukkan ID Materi yang ingin dihapus: ");
                                                                                         int idCariHapus = input.nextInt();
                                                                                         input.nextLine();
+                                                                                        System.out.println("=================================================================");
+                                                                                        System.out.println();
                                                                                         boolean ditemukanHapus = false;
                                                                                         for (int i = 0; i < listMateri.size(); i++) 
                                                                                         {
@@ -1155,7 +1168,6 @@ public class App
                                                                                                         break;
                                                                                                 }
                                                                                         }
-                                                                                        System.out.println("=================================================================");
                                                                                         System.out.println();
                                                                                         if (!ditemukanHapus) 
                                                                                         {
@@ -1234,7 +1246,7 @@ public class App
                                                                                 break;
                                                                         case 2: 
                                                                                 System.out.println("=================================================================");
-                                                                                System.out.println("                           INPUT NILAI BARU                    ");
+                                                                                System.out.println("                          INPUT NILAI BARU                    ");
                                                                                 System.out.println("=================================================================");
                                                                                 System.out.print("Masukkan ID Nilai    : ");
                                                                                 int idN = input.nextInt();
@@ -1308,13 +1320,13 @@ public class App
                                                                         System.out.println("----------------------------------------------------------------");
                                                                         System.out.print("Pilih Menu Kelas : ");
                                                                         int subkelas = input.nextInt();
+                                                                        System.out.println();
                                                                         switch (subkelas) 
                                                                         {
                                                                                 case 1: 
                                                                                         boolean kelolajadwal = true;
                                                                                         while (kelolajadwal) 
                                                                                         {
-                                                                                                System.out.println();
                                                                                                 System.out.println("=================================================================");
                                                                                                 System.out.println("========================= KELAS BAHASA ==========================");
                                                                                                 System.out.println("=================================================================");
@@ -1327,6 +1339,7 @@ public class App
                                                                                                 System.out.println("-----------------------------------------------------------------");
                                                                                                 System.out.print("Pilih Menu Kelas : ");
                                                                                                 int kelasbahasa = input.nextInt();
+                                                                                                System.out.println();
                                                                                                 switch (kelasbahasa)
                                                                                                 {
                                                                                                         case 1:
@@ -1355,6 +1368,7 @@ public class App
                                                                                         break;
                                                                                 case 2:
                                                                                         stafflembaga.kelolaKurikulum();
+                                                                                        System.out.println();
                                                                                         break;
                                                                                 case 3:
                                                                                         menuKelas = false;
@@ -1388,6 +1402,14 @@ public class App
                                         System.out.println();
                                 }
                                 break;
+                        case 4: 
+                                menuutama = true;
+                                System.out.println("Terimakasih telah berkunjungi, jangan lupa untuk berkunjung kembali!");
+                                System.out.println();
+                                break;
+                        default: 
+                                System.out.println("Pilihan tidak valid");
+                                System.out.println();                        
                 }
         }
         input.close();
