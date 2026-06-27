@@ -29,6 +29,31 @@ public class Materi extends Pengajar
         this.idPengajar = idPengajar;
     }
 
+    public int getIdMateri() 
+    { 
+        return idMateri; 
+    }
+
+    public String getJudul() 
+    { 
+        return judul; 
+    }
+
+    public void setJudul(String judul) 
+    { 
+        this.judul = judul; 
+    }
+
+    public String getIsiMateri() 
+    { 
+        return isiMateri; 
+    }
+
+    public void setIsiMateri(String isiMateri) 
+    { 
+        this.isiMateri = isiMateri; 
+    }
+
     public void tambahMateri() 
     {
         System.out.println("===========================================================");

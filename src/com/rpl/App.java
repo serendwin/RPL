@@ -963,7 +963,8 @@ public class App
                                                 System.out.println("1. Kelola Materi");
                                                 System.out.println("2. Kelola Tes");
                                                 System.out.println("3. Kelola Nilai Siswa");
-                                                System.out.println("4. Logout");
+                                                System.out.println("4. Kegiatan Mengajar");                                                
+                                                System.out.println("5. Logout");
                                                 System.out.println("-----------------------------------------------------------------");
                                                 System.out.print("Pilih Menu : ");
                                                 int menupengajar = input.nextInt();
@@ -971,7 +972,110 @@ public class App
                                                 switch (menupengajar) 
                                                 {
                                                         case 1:
-                                                                System.out.println("-> Menampilkan jadwal mengajar Anda...");
+                                                                ArrayList<Materi> listMateri = new ArrayList<>();
+                                                                listMateri.add(materibinggris1);
+                                                                listMateri.add(materibinggris2);
+                                                                listMateri.add(materibjerman1);
+                                                                listMateri.add(materibjerman2);
+                                                                listMateri.add(materibchina1);
+                                                                listMateri.add(materibchina2);                                                                
+                                                                boolean menuutamamateri = false;
+                                                                while (!menuutamamateri) 
+                                                                {
+                                                                        System.out.println("=================================================================");
+                                                                        System.out.println("============================ MATERI =============================");
+                                                                        System.out.println("=================================================================");
+                                                                        System.out.println("1. Tambah Materi");
+                                                                        System.out.println("2. Edit Materi");
+                                                                        System.out.println("3. Hapus Materi");
+                                                                        System.out.println("4. Keluar");
+                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                        System.out.print("Pilih Menu : ");
+                                                                        int menumateri = input.nextInt();
+                                                                        System.out.println();
+                                                                        switch(menumateri)
+                                                                        {
+                                                                                case 1: 
+                                                                                        System.out.println("=========================================================");
+                                                                                        System.out.println("                     TAMBAH MATERI NEW                   ");
+                                                                                        System.out.println("=========================================================");
+                                                                                        input.nextLine(); 
+                                                                                        System.out.print("Masukkan ID Materi baru : ");
+                                                                                        int idMat = input.nextInt();
+                                                                                        input.nextLine();                       
+                                                                                        System.out.print("Masukkan Judul Materi   : ");
+                                                                                        String judulMat = input.nextLine();                                                                                        
+                                                                                        System.out.print("Masukkan Isi Materi     : ");
+                                                                                        String isiMat = input.nextLine();                                                                                        
+                                                                                        System.out.print("Masukkan ID Kelas       : ");
+                                                                                        int idKel = input.nextInt();
+                                                                                        input.nextLine();
+                                                                                        Materi materiBaru = new Materi(
+                                                                                        userlogin.id_user,     
+                                                                                        userlogin.getNamaUser(),
+                                                                                        userlogin.email,        
+                                                                                        userlogin.password,     
+                                                                                        idMat,                  
+                                                                                        judulMat,               
+                                                                                        isiMat,                 
+                                                                                        idKel,                  
+                                                                                        userlogin.id_user        
+                                                                                        );
+                                                                                        listMateri.add(materiBaru); 
+                                                                                        materiBaru.tambahMateri();
+                                                                                        break;
+                                                                                case 2:
+                                                                                        System.out.println("=========================================================");
+                                                                                        System.out.println("                     EDIT MATERI                         ");
+                                                                                        System.out.println("=========================================================");
+                                                                                        System.out.print("Masukkan ID Materi yang ingin diedit: ");
+                                                                                        int idCariEdit = input.nextInt();
+                                                                                        input.nextLine();
+                                                                                        boolean ditemukanEdit = false;
+                                                                                        for (Materi m : listMateri) 
+                                                                                        {
+                                                                                                if (m.getIdMateri() == idCariEdit && m.id_user == userlogin.id_user) 
+                                                                                                {
+                                                                                                        System.out.print("Masukkan Judul Bahasa Baru [" + m.getJudul() + "]: ");
+                                                                                                        m.setJudul(input.nextLine());
+                                                                                                        System.out.print("Masukkan Isi Materi Baru: ");
+                                                                                                        m.setIsiMateri(input.nextLine());
+                                                                                                        m.editMateri();
+                                                                                                        break;
+                                                                                                }
+                                                                                        }     
+                                                                                        if (!ditemukanEdit) 
+                                                                                        {
+                                                                                                System.out.println("Materi tidak ditemukan atau Anda tidak memiliki akses mengedit materi ini.");
+                                                                                        }
+                                                                                        break;
+                                                                                case 3: 
+                                                                                        System.out.println("=========================================================");
+                                                                                        System.out.println("                     HAPUS MATERI                        ");
+                                                                                        System.out.println("=========================================================");
+                                                                                        System.out.print("Masukkan ID Materi yang ingin dihapus: ");
+                                                                                        int idCariHapus = input.nextInt();
+                                                                                        input.nextLine();
+                                                                                        boolean ditemukanHapus = false;
+                                                                                        for (int i = 0; i < listMateri.size(); i++) 
+                                                                                        {
+                                                                                                Materi m = listMateri.get(i);
+                                                                                                if (m.getIdMateri() == idCariHapus && m.id_user == userlogin.id_user) 
+                                                                                                {
+                                                                                                        m.hapusMateri();
+                                                                                                        listMateri.remove(i);
+                                                                                                        System.out.println("-> Materi dengan ID " + idCariHapus + " berhasil dihapus!");
+                                                                                                        ditemukanHapus = true;
+                                                                                                        break;
+                                                                                                }
+                                                                                        }
+                                                                                        if (!ditemukanHapus) 
+                                                                                        {
+                                                                                                System.out.println("Materi tidak ditemukan atau Anda tidak berhak menghapus materi ini.");
+                                                                                        }
+                                                                                        break;
+                                                                        }
+                                                                }
                                                                 break;
                                                         case 2:
                                                                 System.out.println("-> Fitur input nilai mahasiswa...");
