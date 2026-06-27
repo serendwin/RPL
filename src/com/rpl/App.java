@@ -272,7 +272,7 @@ public class App
         
         Kelas kelasbjerman = new Kelas(
                 20,
-                "German Class",
+                "Germany Class",
                 102,
                 "26-06-2026",
                 "10:00 - 12:00"
@@ -286,22 +286,25 @@ public class App
                 "14:00 - 16:00"
         );
 
-        Sertifikat sertifikatbinggris1 = new Sertifikat(
+        Sertifikat sertifikatbinggris = new Sertifikat(
                 15,      
                 1,    
-                10    
+                "Joko",
+                "English Class" 
         );        
 
-        Sertifikat sertifikatbjerman1 = new Sertifikat(
-                25,      
+        Sertifikat sertifikatbjerman = new Sertifikat(
+              15,      
                 1,    
-                20    
+                "Joko",
+                "Germany Class" 
         );             
 
-        Sertifikat sertifikatbchina1 = new Sertifikat(
-                35,      
+        Sertifikat sertifikatbchina = new Sertifikat(
+              15,      
                 1,    
-                30    
+                "Joko",
+                "Chiness Class" 
         );        
 
 
@@ -373,294 +376,562 @@ public class App
                 85
         );
 
-
-        Nilai nilaibjerman1 = new Nilai(
+        Nilai nilaibjerman = new Nilai(
                 61,
                 1,
                 20,
                 80
         );
 
-
-        Nilai nilaibjerman2 = new Nilai(
-                62,
-                1,
-                21,
-                75
-        );
-
-        Nilai nilaibchina1 = new Nilai(
+        Nilai nilaibchina = new Nilai(
                 71,
                 1,
                 30,
                 95
         );
 
-        Nilai nilaibchina2 = new Nilai(
-                72,
-                1,
-                31,
-                88
-        );
-
         Mahasiswa mhs = new Mahasiswa(1, "Joko", "kijokogawlbodo@gmail.ac.id", "66666");
 
         Scanner input = new Scanner(System.in);
-
-        System.out.println("______________________________________________________________________");
-        System.out.println("=====          Selamat Datang Di Sistem Aku Cinta Bahasa          ====");
-        System.out.println("=====            Lembaga Bahasa Universitas Pancasila             ====");
-        System.out.println("----------------------------------------------------------------------");
-        System.out.println("Choose your role:");
-        System.out.println("----------------------------------------------------------------------");
-        System.out.println("1. Mahasiswa");
-        System.out.println("2. Pengajar");
-        System.out.println("3. Lembaga Bahasa");
-        System.out.println("4. Keluar");
-        System.out.println("----------------------------------------------------------------------");
-        System.out.print("Pilih menu : ");
-        int menuUtama = input.nextInt();
-        System.out.println();
-        switch (menuUtama) 
+       
+        boolean menuutama = false;
+        while (!menuutama) 
         {
-            case 1:
-                boolean kembalimahasiswa = false;
-                while (!kembalimahasiswa) 
+                System.out.println("______________________________________________________________________");
+                System.out.println("=====          Selamat Datang Di Sistem Aku Cinta Bahasa          ====");
+                System.out.println("=====            Lembaga Bahasa Universitas Pancasila             ====");
+                System.out.println("----------------------------------------------------------------------");
+                System.out.println("Choose your role:");
+                System.out.println("----------------------------------------------------------------------");
+                System.out.println("1. Mahasiswa");
+                System.out.println("2. Pengajar");
+                System.out.println("3. Lembaga Bahasa");
+                System.out.println("4. Keluar");
+                System.out.println("----------------------------------------------------------------------");
+                System.out.print("Pilih menu : ");
+                int menuUtama = input.nextInt();
+                System.out.println();
+                switch (menuUtama) 
                 {
-                    System.out.println("=================================================================");
-                    System.out.println("========================== MAHASISWA ============================");
-                    System.out.println("=================================================================");
-                    System.out.println("1. Registrasi Akun");
-                    System.out.println("2. Login Akun");
-                    System.out.println("-----------------------------------------------------------------");
-                    System.out.print("Pilih Menu : ");
-                    int menumahasiswa = input.nextInt();
-                    System.out.println();
-                    switch (menumahasiswa) 
-                    {
-                        case 1:
-                                Mahasiswa.daftar();
-                                Mahasiswa.registrasiberhasil();
-                                System.out.println("");
-                                break;
-
-                        case 2:
-                                Mahasiswa.loginakun();                        
-                                Mahasiswa.loginberhasil();
-                                System.out.println("");
-                                boolean loginSukses = false;
-                                while (!loginSukses)
+                case 1:
+                        boolean kembalimahasiswa = false;
+                        while (!kembalimahasiswa) 
+                        {
+                                System.out.println("=================================================================");
+                                System.out.println("========================== MAHASISWA ============================");
+                                System.out.println("=================================================================");
+                                System.out.println("1. Registrasi Akun");
+                                System.out.println("2. Login Akun");
+                                System.out.println("-----------------------------------------------------------------");
+                                System.out.print("Pilih Menu : ");
+                                int menumahasiswa = input.nextInt();
+                                System.out.println();
+                                switch (menumahasiswa) 
                                 {
-                                        System.out.println("=================================================================");
-                                        System.out.println("========================== MAHASISWA ============================");
-                                        System.out.println("=================================================================");
-                                        System.out.println("1. Daftar Kelas");
-                                        System.out.println("2. Kelas Saya");
-                                        System.out.println("3. Logout");
-                                        System.out.println("-----------------------------------------------------------------");
-                                        System.out.print("Pilih Menu : ");
-                                        int menumahasiswakelas = input.nextInt();
-                                        System.out.println();
-                                        switch (menumahasiswakelas) 
-                                        {        
-                                                case 1:
-                                                        boolean kembalidaftarkelas = false;
-                                                        while (!kembalidaftarkelas)
-                                                        {
-                                                                System.out.println("=================================================================");
-                                                                System.out.println("=========================  DAFTAR KELAS  ========================");
-                                                                System.out.println("=================================================================");
-                                                                System.out.println("1. Kelas Bahasa Inggris");
-                                                                System.out.println("2. Kelas Bahasa Jerman");
-                                                                System.out.println("3. Kelas Bahasa Cina");
-                                                                System.out.println("4. Kembali");                            
-                                                                System.out.println("-----------------------------------------------------------------");                                
-                                                                System.out.print("Pilih Kelas : ");
-                                                                int menudaftarkelas = input.nextInt();
-                                                                System.out.println();
-                                                                switch (menudaftarkelas) 
-                                                                {
+                                        case 1:
+                                                Mahasiswa.daftar();
+                                                Mahasiswa.registrasiberhasil();
+                                                System.out.println("");
+                                                break;
+                                        case 2:
+                                                Mahasiswa.loginakun();                        
+                                                Mahasiswa.loginberhasil();
+                                                System.out.println("");
+                                                boolean loginSukses = false;
+                                                while (!loginSukses)
+                                                {
+                                                        System.out.println("=================================================================");
+                                                        System.out.println("========================== MAHASISWA ============================");
+                                                        System.out.println("=================================================================");
+                                                        System.out.println("1. Daftar Kelas");
+                                                        System.out.println("2. Kelas Saya");
+                                                        System.out.println("3. Logout");
+                                                        System.out.println("-----------------------------------------------------------------");
+                                                        System.out.print("Pilih Menu : ");
+                                                        int menumahasiswakelas = input.nextInt();
+                                                        System.out.println();
+                                                        switch (menumahasiswakelas) 
+                                                        {        
                                                                 case 1:
-                                                                        mhs.daftarKelas();
-                                                                        System.out.println("");
-                                                                        kembalidaftarkelas = true;
+                                                                        boolean kembalidaftarkelas = false;
+                                                                        while (!kembalidaftarkelas)
+                                                                        {
+                                                                                System.out.println("=================================================================");
+                                                                                System.out.println("=========================  DAFTAR KELAS  ========================");
+                                                                                System.out.println("=================================================================");
+                                                                                System.out.println("1. Kelas Bahasa Inggris");
+                                                                                System.out.println("2. Kelas Bahasa Jerman");
+                                                                                System.out.println("3. Kelas Bahasa Cina");
+                                                                                System.out.println("4. Kembali");                            
+                                                                                System.out.println("-----------------------------------------------------------------");                                
+                                                                                System.out.print("Pilih Kelas : ");
+                                                                                int menudaftarkelas = input.nextInt();
+                                                                                System.out.println();
+                                                                                switch (menudaftarkelas) 
+                                                                                {
+                                                                                        case 1:
+                                                                                                mhs.daftarKelas();
+                                                                                                System.out.println("");
+                                                                                                kembalidaftarkelas = true;
+                                                                                                break;
+                                                                                        case 2:
+                                                                                                mhs.daftarKelas();
+                                                                                                System.out.println("");
+                                                                                                kembalidaftarkelas = true;
+                                                                                                break;
+                                                                                        case 3:
+                                                                                                mhs.daftarKelas();
+                                                                                                System.out.println("");
+                                                                                                kembalidaftarkelas = true;
+                                                                                                break;
+                                                                                        case 4:
+                                                                                                loginSukses = true;
+                                                                                                break;
+                                                                                        default: 
+                                                                                                System.out.println("Pilihan tidak valid!");
+                                                                                                System.out.println();                                                                                                                                                                                
+                                                                                }
+                                                                        }
                                                                         break;
+
                                                                 case 2:
-                                                                        mhs.daftarKelas();
-                                                                        System.out.println("");
-                                                                        kembalidaftarkelas = true;
-                                                                        break;
-                                                                case 3:
-                                                                        mhs.daftarKelas();
-                                                                        System.out.println("");
-                                                                        kembalidaftarkelas = true;
-                                                                        break;
-
-                                                                case 4:
-                                                                        loginSukses = true;
-                                                                        break;
-                                                                }
-                                                        }
-                                                        break;
-
-                                                case 2:
-                                                        boolean kembalikelas = false;
-                                                        while (!kembalikelas)
-                                                        {
-                                                                System.out.println("=================================================================");
-                                                                System.out.println("========================== KELAS SAYA ===========================");
-                                                                System.out.println("=================================================================");
-                                                                System.out.println("Informasi Kelas Yang Diikuti");
-                                                                System.out.println("-----------------------------------------------------------------");
-                                                                System.out.println("1. Kelas Bahasa Inggris");
-                                                                System.out.println("2. Kelas Bahasa Jerman");
-                                                                System.out.println("3. Kelas Bahasa China");
-                                                                System.out.println("4. Kembali");
-                                                                System.out.println("-----------------------------------------------------------------");
-                                                                System.out.print("Pilih Menu : ");
-                                                                int menumahasiswakelasdetail = input.nextInt();
-                                                                System.out.println();
-                                                                switch (menumahasiswakelasdetail) 
-                                                                {
-                                                                        case 1:
+                                                                        boolean kembalikelas = false;
+                                                                        while (!kembalikelas)
+                                                                        {
                                                                                 System.out.println("=================================================================");
                                                                                 System.out.println("========================== KELAS SAYA ===========================");
                                                                                 System.out.println("=================================================================");
-                                                                                System.out.println("Selamat datang di Kelas Bahasa Inggris");
+                                                                                System.out.println("Informasi Kelas Yang Diikuti");
                                                                                 System.out.println("-----------------------------------------------------------------");
-                                                                                System.out.println("1. Lihat Jadwal Kelas");
-                                                                                System.out.println("2. Materi Pembelajaran");
-                                                                                System.out.println("3. Test");
-                                                                                System.out.println("4. Sertifikat");
-                                                                                System.out.println("5. Kembali");                                                        
+                                                                                System.out.println("1. Kelas Bahasa Inggris");
+                                                                                System.out.println("2. Kelas Bahasa Jerman");
+                                                                                System.out.println("3. Kelas Bahasa China");
+                                                                                System.out.println("4. Kembali");
                                                                                 System.out.println("-----------------------------------------------------------------");
                                                                                 System.out.print("Pilih Menu : ");
-                                                                                int menukelasbingg = input.nextInt();
+                                                                                int menumahasiswakelasdetail = input.nextInt();
                                                                                 System.out.println();
-                                                                                switch (menukelasbingg)   
+                                                                                switch (menumahasiswakelasdetail) 
                                                                                 {
                                                                                         case 1:
-                                                                                                kelasbinggris.jadwalkelas();
-                                                                                                break;
-                                                                                        case 2:
-                                                                                                System.out.println("=================================================================");
-                                                                                                System.out.println("=========================  DAFTAR KELAS  ========================");
-                                                                                                System.out.println("=================================================================");
-                                                                                                System.out.println("1. Pertemuan 1");
-                                                                                                System.out.println("2. Pertemuan 2");
-                                                                                                System.out.println("3. Kembali");
-                                                                                                System.out.println("-----------------------------------------------------------------");
-                                                                                                System.out.print("Pilih Materi : ");
-                                                                                                int menumateribingg = input.nextInt();
-                                                                                                System.out.println();
-                                                                                                switch (menumateribingg) 
+                                                                                                boolean englishclass = false;
+                                                                                                while (!englishclass)
                                                                                                 {
-                                                                                                        case 1:
-                                                                                                                materibinggris1.lihatMateri();
-                                                                                                                break;
-                                                                                                        case 2:
-                                                                                                                materibinggris2.lihatMateri();
-                                                                                                                break;
-                                                                                                        case 3:
-                                                                                                                break;
+                                                                                                        System.out.println("=================================================================");
+                                                                                                        System.out.println("========================= ENGLISH CLASS =========================");
+                                                                                                        System.out.println("=================================================================");
+                                                                                                        System.out.println("Selamat datang di Kelas Bahasa Inggris");
+                                                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                                                        System.out.println("1. Lihat Jadwal Kelas");
+                                                                                                        System.out.println("2. Materi Pembelajaran");
+                                                                                                        System.out.println("3. Test");
+                                                                                                        System.out.println("4. Sertifikat");
+                                                                                                        System.out.println("5. Kembali");                                                        
+                                                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                                                        System.out.print("Pilih Menu : ");
+                                                                                                        int menukelasbingg = input.nextInt();
+                                                                                                        System.out.println();
+                                                                                                        switch (menukelasbingg)   
+                                                                                                        {
+                                                                                                                case 1:
+                                                                                                                        kelasbinggris.jadwalkelas();
+                                                                                                                        break;
+                                                                                                                case 2:
+                                                                                                                        System.out.println("=================================================================");
+                                                                                                                        System.out.println("=========================  DAFTAR KELAS  ========================");
+                                                                                                                        System.out.println("=================================================================");
+                                                                                                                        System.out.println("1. Pertemuan 1");
+                                                                                                                        System.out.println("2. Pertemuan 2");
+                                                                                                                        System.out.println("3. Kembali");
+                                                                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                                                                        System.out.print("Pilih Materi : ");
+                                                                                                                        int menumateribingg = input.nextInt();
+                                                                                                                        System.out.println();
+                                                                                                                        switch (menumateribingg) 
+                                                                                                                        {
+                                                                                                                                case 1:
+                                                                                                                                        materibinggris1.lihatMateri();
+                                                                                                                                        break;
+                                                                                                                                case 2:
+                                                                                                                                        materibinggris2.lihatMateri();
+                                                                                                                                        break;
+                                                                                                                                case 3:
+                                                                                                                                        break;
+                                                                                                                                default: 
+                                                                                                                                        System.out.println("Pilihan tidak valid!");
+                                                                                                                                        System.out.println();                                                                                                                         
+                                                                                                                        }
+                                                                                                                        break;
+                                                                                                                case 3:
+                                                                                                                        tesbinggris.mulaiTes();
+                                                                                                                        System.out.println("");
+                                                                                                                        Soal[] daftarUjian = {soalbinggris1, soalbinggris2};    
+                                                                                                                        Jawaban[] daftarJawaban = {jawabanbinggris1, jawabanbinggris2};    
+                                                                                                                        int totalNilai = 0;
+                                                                                                                        System.out.println("===========================================================");
+                                                                                                                        System.out.println("                MULAI UJIAN BAHASA INGGRIS                 ");
+                                                                                                                        System.out.println("===========================================================");
+                                                                                                                        System.out.println("Nama Kelas: " + kelasbinggris.getNamaKelas());
+                                                                                                                        System.out.println("Nama Pengajar: " + Pengajar1.getNamaUser());
+                                                                                                                        System.out.println("Total Soal: " + daftarUjian.length);
+                                                                                                                        System.out.println();
+                                                                                                                        for (int i = 0; i < daftarUjian.length; i++) 
+                                                                                                                        {
+                                                                                                                                System.out.println(i + 1);
+                                                                                                                                System.out.println("Pertanyaan   : " + daftarUjian[i].getPertanyaan());
+                                                                                                                                System.out.println();
+                                                                                                                                System.out.println(daftarUjian[i].getPilihan());
+                                                                                                                                System.out.println("-----------------------------------------------------------");
+                                                                                                                                System.out.print("Jawaban Anda: ");
+                                                                                                                                String jawabanUser = input.next();
+                                                                                                                                jawabanbinggris1. setJawaban(jawabanUser);
+                                                                                                                                jawabanbinggris1.simpanJawaban();
+                                                                                                                                jawabanbinggris1.periksaJawaban(daftarUjian[i].getJawabanBenar());
+                                                                                                                                jawabanbinggris2.setJawaban(jawabanUser);
+                                                                                                                                jawabanbinggris2.simpanJawaban();
+                                                                                                                                jawabanbinggris2.periksaJawaban(daftarUjian[i].getJawabanBenar());
+                                                                                                                                if (jawabanUser.equalsIgnoreCase(daftarUjian[i].getJawabanBenar())) 
+                                                                                                                                {
+                                                                                                                                        System.out.println("-> Benar!");
+                                                                                                                                        totalNilai += 50;
+                                                                                                                                } 
+                                                                                                                                else 
+                                                                                                                                {
+                                                                                                                                        System.out.println("-> Salah! (Jawaban benar: " + daftarUjian[i].getJawabanBenar() + ")");
+                                                                                                                                }
+                                                                                                                                System.out.println("Waktu menjawab: " + jawabanbinggris1.getWaktuJawab());
+                                                                                                                                System.out.println("Waktu menjawab: " + jawabanbinggris2.getWaktuJawab());
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println();
+                                                                                                                        }                                                                                
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println("                      REKAP NILAI AKHIR                    ");
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println("ID Mahasiswa   : " + Mahasiswa.getIdUser());
+                                                                                                                                System.out.println("Nama Mahasiswa : " + Mahasiswa.getNamaUser());
+                                                                                                                                System.out.println("Skor Diperoleh : " + nilaibinggris.hitungNilai() + " / 100.0"); 
+                                                                                                                                System.out.println("Status Ujian   : " + (nilaibinggris.getSkor() >= 70 ? "LULUS" : "REMEDIAL"));
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println();
+
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println("                REVIEW SOAL DAN KUNCI JAWABAN              ");
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                for (int i = 0; i < daftarUjian.length; i++) 
+                                                                                                                                {
+                                                                                                                                        System.out.println("Soal Nomor " + (i + 1));
+                                                                                                                                        System.out.println("Pertanyaan    : " + daftarUjian[i].getPertanyaan());
+                                                                                                                                        System.out.println("Jawaban Anda  : " + daftarJawaban[i].getJawaban() + 
+                                                                                                                                                        " (" + (daftarJawaban[i].isStatusBenar() ? "BENAR" : "SALAH") + ")");
+                                                                                                                                        System.out.println("Kunci Jawaban : " + daftarUjian[i].getJawabanBenar());
+                                                                                                                                        System.out.println("===========================================================");
+                                                                                                                                        System.out.println();
+                                                                                                                                }
+                                                                                                                                tesbinggris.tutupTes();
+                                                                                                                                System.out.println("==========================================================="); 
+                                                                                                                        break;
+                                                                                                                case 4: 
+                                                                                                                        List<Nilai> daftarnilaibinggris = new ArrayList<>();
+                                                                                                                        daftarnilaibinggris.add(nilaibinggris); 
+                                                                                                                        sertifikatbinggris.hitungNilai(daftarnilaibinggris);
+                                                                                                                        sertifikatbinggris.lihatNilai();
+                                                                                                                        break; 
+                                                                                                                case 5:
+                                                                                                                        englishclass = true;
+                                                                                                                        break;
+                                                                                                                default: 
+                                                                                                                        System.out.println("Pilihan tidak valid!");
+                                                                                                                        System.out.println();                                                                                                        
+                                                                                                        }                                                                                                                                             
+                                                                                                }
+                                                                                                break;
+
+                                                                                        case 2:
+                                                                                                boolean germanyclass = false;
+                                                                                                while (!germanyclass)
+                                                                                                {
+                                                                                                        System.out.println("=================================================================");
+                                                                                                        System.out.println("========================= GERMANY CLASS =========================");
+                                                                                                        System.out.println("=================================================================");
+                                                                                                        System.out.println("Selamat datang di Kelas Bahasa Jerman");
+                                                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                                                        System.out.println("1. Lihat Jadwal Kelas");
+                                                                                                        System.out.println("2. Materi Pembelajaran");
+                                                                                                        System.out.println("3. Test");
+                                                                                                        System.out.println("4. Sertifikat");
+                                                                                                        System.out.println("5. Kembali");                                                        
+                                                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                                                        System.out.print("Pilih Menu : ");
+                                                                                                        int menukelasbjerman = input.nextInt();
+                                                                                                        System.out.println();
+                                                                                                        switch (menukelasbjerman)   
+                                                                                                        {
+                                                                                                                case 1:
+                                                                                                                        kelasbjerman.jadwalkelas();
+                                                                                                                        break;
+                                                                                                                case 2:
+                                                                                                                        boolean materigermany = false;
+                                                                                                                        while (!materigermany) 
+                                                                                                                        {
+                                                                                                                                System.out.println("=================================================================");
+                                                                                                                                System.out.println("=========================  DAFTAR KELAS  ========================");
+                                                                                                                                System.out.println("=================================================================");
+                                                                                                                                System.out.println("1. Pertemuan 1");
+                                                                                                                                System.out.println("2. Pertemuan 2");
+                                                                                                                                System.out.println("3. Kembali");
+                                                                                                                                System.out.println("-----------------------------------------------------------------");
+                                                                                                                                System.out.print("Pilih Materi : ");
+                                                                                                                                int menumateribjerman = input.nextInt();
+                                                                                                                                System.out.println();
+                                                                                                                                switch (menumateribjerman) 
+                                                                                                                                {
+                                                                                                                                        case 1:
+                                                                                                                                                materibjerman1.lihatMateri();
+                                                                                                                                                break;
+                                                                                                                                        case 2:
+                                                                                                                                                materibjerman2.lihatMateri();
+                                                                                                                                                break;
+                                                                                                                                        case 3:
+                                                                                                                                                materigermany = true;
+                                                                                                                                                break;
+                                                                                                                                        default: 
+                                                                                                                                                System.out.println("Pilihan tidak valid!");
+                                                                                                                                                System.out.println();                                                                                                                         
+                                                                                                                                }        
+                                                                                                                        }
+                                                                                                                        break;
+                                                                                                                case 3:
+                                                                                                                        tesbjerman.mulaiTes();
+                                                                                                                        System.out.println("");
+                                                                                                                        Soal[] daftarUjian = {soalbjerman1, soalbjerman2};    
+                                                                                                                        Jawaban[] daftarJawaban = {jawabanbjerman1, jawabanbjerman2};    
+                                                                                                                        int totalNilai = 0;
+                                                                                                                        System.out.println("===========================================================");
+                                                                                                                        System.out.println("                MULAI UJIAN BAHASA JERMAN                 ");
+                                                                                                                        System.out.println("===========================================================");
+                                                                                                                        System.out.println("Nama Kelas: " + kelasbjerman.getNamaKelas());
+                                                                                                                        System.out.println("Nama Pengajar: " + Pengajar2.getNamaUser());
+                                                                                                                        System.out.println("Total Soal: " + daftarUjian.length);
+                                                                                                                        System.out.println();
+                                                                                                                        for (int i = 0; i < daftarUjian.length; i++) 
+                                                                                                                        {
+                                                                                                                                System.out.println(i + 1);
+                                                                                                                                System.out.println("Pertanyaan   : " + daftarUjian[i].getPertanyaan());
+                                                                                                                                System.out.println();
+                                                                                                                                System.out.println(daftarUjian[i].getPilihan());
+                                                                                                                                System.out.println("-----------------------------------------------------------");
+                                                                                                                                System.out.print("Jawaban Anda: ");
+                                                                                                                                String jawabanUser = input.next();
+                                                                                                                                jawabanbjerman1. setJawaban(jawabanUser);
+                                                                                                                                jawabanbjerman1.simpanJawaban();
+                                                                                                                                jawabanbjerman1.periksaJawaban(daftarUjian[i].getJawabanBenar());
+                                                                                                                                jawabanbjerman2.setJawaban(jawabanUser);
+                                                                                                                                jawabanbjerman2.simpanJawaban();
+                                                                                                                                jawabanbjerman2.periksaJawaban(daftarUjian[i].getJawabanBenar());
+                                                                                                                                if (jawabanUser.equalsIgnoreCase(daftarUjian[i].getJawabanBenar())) 
+                                                                                                                                {
+                                                                                                                                        System.out.println("-> Benar!");
+                                                                                                                                        totalNilai += 50;
+                                                                                                                                } 
+                                                                                                                                else 
+                                                                                                                                {
+                                                                                                                                        System.out.println("-> Salah! (Jawaban benar: " + daftarUjian[i].getJawabanBenar() + ")");
+                                                                                                                                }
+                                                                                                                                System.out.println("Waktu menjawab: " + jawabanbjerman1.getWaktuJawab());
+                                                                                                                                System.out.println("Waktu menjawab: " + jawabanbjerman2.getWaktuJawab());
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println();
+                                                                                                                        }                                                                                
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println("                      REKAP NILAI AKHIR                    ");
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println("ID Mahasiswa   : " + Mahasiswa.getIdUser());
+                                                                                                                                System.out.println("Nama Mahasiswa : " + Mahasiswa.getNamaUser());
+                                                                                                                                System.out.println("Skor Diperoleh : " + nilaibjerman.hitungNilai() + " / 100.0"); 
+                                                                                                                                System.out.println("Status Ujian   : " + (nilaibjerman.getSkor() >= 70 ? "LULUS" : "REMEDIAL"));
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println();
+
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println("                REVIEW SOAL DAN KUNCI JAWABAN              ");
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                for (int i = 0; i < daftarUjian.length; i++) 
+                                                                                                                                {
+                                                                                                                                        System.out.println("Soal Nomor " + (i + 1));
+                                                                                                                                        System.out.println("Pertanyaan    : " + daftarUjian[i].getPertanyaan());
+                                                                                                                                        System.out.println("Jawaban Anda  : " + daftarJawaban[i].getJawaban() + 
+                                                                                                                                                        " (" + (daftarJawaban[i].isStatusBenar() ? "BENAR" : "SALAH") + ")");
+                                                                                                                                        System.out.println("Kunci Jawaban : " + daftarUjian[i].getJawabanBenar());
+                                                                                                                                        System.out.println("===========================================================");
+                                                                                                                                        System.out.println();
+                                                                                                                                }
+                                                                                                                                tesbinggris.tutupTes();
+                                                                                                                                System.out.println("==========================================================="); 
+
+                                                                                                                        break;
+                                                                                                                case 4: 
+                                                                                                                        List<Nilai> daftarnilaibjerman = new ArrayList<>();
+                                                                                                                        daftarnilaibjerman.add(nilaibjerman); 
+                                                                                                                        sertifikatbjerman.hitungNilai(daftarnilaibjerman);
+                                                                                                                        sertifikatbjerman.lihatNilai();
+                                                                                                                        break; 
+                                                                                                                case 5:
+                                                                                                                        englishclass = true;
+                                                                                                                        break;
+                                                                                                                default: 
+                                                                                                                        System.out.println("Pilihan tidak valid!");
+                                                                                                                        System.out.println();                                                                                                        
+                                                                                                        }                                                                                                                                             
                                                                                                 }
                                                                                                 break;
                                                                                         case 3:
-                                                                                                tesbinggris.mulaiTes();
-                                                                                                System.out.println("");
-                                                                                                Soal[] daftarUjian = {soalbinggris1, soalbinggris2};    
-                                                                                                Jawaban[] daftarJawaban = {jawabanbinggris1, jawabanbinggris2};    
-                                                                                                int totalNilai = 0;
-                                                                                                System.out.println("===========================================================");
-                                                                                                System.out.println("                MULAI UJIAN BAHASA INGGRIS                 ");
-                                                                                                System.out.println("===========================================================");
-                                                                                                System.out.println("Nama Kelas: " + kelasbinggris.getNamaKelas());
-                                                                                                System.out.println("Nama Pengajar: " + Pengajar1.getNamaUser());
-                                                                                                System.out.println("Total Soal: " + daftarUjian.length);
-                                                                                                System.out.println();
-                                                                                                for (int i = 0; i < daftarUjian.length; i++) 
+                                                                                                boolean chineseclass = false;
+                                                                                                while (!chineseclass)
                                                                                                 {
-                                                                                                        System.out.println(i + 1);
-                                                                                                        System.out.println("Pertanyaan   : " + daftarUjian[i].getPertanyaan());
+                                                                                                        System.out.println("=================================================================");
+                                                                                                        System.out.println("========================= CHINESE CLASS =========================");
+                                                                                                        System.out.println("=================================================================");
+                                                                                                        System.out.println("Selamat datang di Kelas Bahasa China");
+                                                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                                                        System.out.println("1. Lihat Jadwal Kelas");
+                                                                                                        System.out.println("2. Materi Pembelajaran");
+                                                                                                        System.out.println("3. Test");
+                                                                                                        System.out.println("4. Sertifikat");
+                                                                                                        System.out.println("5. Kembali");                                                        
+                                                                                                        System.out.println("-----------------------------------------------------------------");
+                                                                                                        System.out.print("Pilih Menu : ");
+                                                                                                        int menukelasbchina = input.nextInt();
                                                                                                         System.out.println();
-                                                                                                        System.out.println(daftarUjian[i].getPilihan());
-                                                                                                        System.out.println("-----------------------------------------------------------");
-                                                                                                        System.out.print("Jawaban Anda: ");
-                                                                                                        String jawabanUser = input.next();
-                                                                                                        jawabanbinggris1. setJawaban(jawabanUser);
-                                                                                                        jawabanbinggris1.simpanJawaban();
-                                                                                                        jawabanbinggris1.periksaJawaban(daftarUjian[i].getJawabanBenar());
-                                                                                                        jawabanbinggris2.setJawaban(jawabanUser);
-                                                                                                        jawabanbinggris2.simpanJawaban();
-                                                                                                        jawabanbinggris2.periksaJawaban(daftarUjian[i].getJawabanBenar());
-                                                                                                        if (jawabanUser.equalsIgnoreCase(daftarUjian[i].getJawabanBenar())) 
+                                                                                                        switch (menukelasbchina)   
                                                                                                         {
-                                                                                                                System.out.println("-> Benar!");
-                                                                                                                totalNilai += 50;
-                                                                                                        } 
-                                                                                                        else 
-                                                                                                        {
-                                                                                                                System.out.println("-> Salah! (Jawaban benar: " + daftarUjian[i].getJawabanBenar() + ")");
-                                                                                                        }
-                                                                                                        System.out.println("Waktu menjawab: " + jawabanbinggris1.getWaktuJawab());
-                                                                                                        System.out.println("Waktu menjawab: " + jawabanbinggris2.getWaktuJawab());
-                                                                                                        System.out.println("===========================================================");
-                                                                                                        System.out.println();
-                                                                                                }                                                                                
-                                                                                                        System.out.println("===========================================================");
-                                                                                                        System.out.println("                      REKAP NILAI AKHIR                    ");
-                                                                                                        System.out.println("===========================================================");
-                                                                                                        System.out.println("ID Mahasiswa   : " + Mahasiswa.getIdUser());
-                                                                                                        System.out.println("Nama Mahasiswa : " + Mahasiswa.getNamaUser());
-                                                                                                        System.out.println("Skor Diperoleh : " + nilaibinggris.hitungNilai() + " / 100.0"); 
-                                                                                                        System.out.println("Status Ujian   : " + (nilaibinggris.getSkor() >= 70 ? "LULUS" : "REMEDIAL"));
-                                                                                                        System.out.println("===========================================================");
-                                                                                                        System.out.println();
+                                                                                                                case 1:
+                                                                                                                        kelasbchina.jadwalkelas();
+                                                                                                                        break;
+                                                                                                                case 2:
+                                                                                                                        boolean materichinese = false;
+                                                                                                                        while (!materichinese) 
+                                                                                                                        {
+                                                                                                                                System.out.println("=================================================================");
+                                                                                                                                System.out.println("=========================  DAFTAR KELAS  ========================");
+                                                                                                                                System.out.println("=================================================================");
+                                                                                                                                System.out.println("1. Pertemuan 1");
+                                                                                                                                System.out.println("2. Pertemuan 2");
+                                                                                                                                System.out.println("3. Kembali");
+                                                                                                                                System.out.println("-----------------------------------------------------------------");
+                                                                                                                                System.out.print("Pilih Materi : ");
+                                                                                                                                int menumateribchina = input.nextInt();
+                                                                                                                                System.out.println();
+                                                                                                                                switch (menumateribchina) 
+                                                                                                                                {
+                                                                                                                                        case 1:
+                                                                                                                                                materibchina1.lihatMateri();
+                                                                                                                                                break;
+                                                                                                                                        case 2:
+                                                                                                                                                materibchina2.lihatMateri();
+                                                                                                                                                break;
+                                                                                                                                        case 3:
+                                                                                                                                                materichinese = true;
+                                                                                                                                                break;
+                                                                                                                                        default: 
+                                                                                                                                                System.out.println("Pilihan tidak valid!");
+                                                                                                                                                System.out.println();                                                                                                                         
+                                                                                                                                }        
+                                                                                                                        }
+                                                                                                                        break;
+                                                                                                                case 3:
+                                                                                                                        tesbchina.mulaiTes();
+                                                                                                                        System.out.println("");
+                                                                                                                        Soal[] daftarUjian = {soalbchina1, soalbchina2};    
+                                                                                                                        Jawaban[] daftarJawaban = {jawabanbchina1, jawabanbchina2};    
+                                                                                                                        int totalNilai = 0;
+                                                                                                                        System.out.println("===========================================================");
+                                                                                                                        System.out.println("                MULAI UJIAN BAHASA CHINA                 ");
+                                                                                                                        System.out.println("===========================================================");
+                                                                                                                        System.out.println("Nama Kelas: " + kelasbchina.getNamaKelas());
+                                                                                                                        System.out.println("Nama Pengajar: " + Pengajar3.getNamaUser());
+                                                                                                                        System.out.println("Total Soal: " + daftarUjian.length);
+                                                                                                                        System.out.println();
+                                                                                                                        for (int i = 0; i < daftarUjian.length; i++) 
+                                                                                                                        {
+                                                                                                                                System.out.println(i + 1);
+                                                                                                                                System.out.println("Pertanyaan   : " + daftarUjian[i].getPertanyaan());
+                                                                                                                                System.out.println();
+                                                                                                                                System.out.println(daftarUjian[i].getPilihan());
+                                                                                                                                System.out.println("-----------------------------------------------------------");
+                                                                                                                                System.out.print("Jawaban Anda: ");
+                                                                                                                                String jawabanUser = input.next();
+                                                                                                                                jawabanbchina1. setJawaban(jawabanUser);
+                                                                                                                                jawabanbchina1.simpanJawaban();
+                                                                                                                                jawabanbchina1.periksaJawaban(daftarUjian[i].getJawabanBenar());
+                                                                                                                                jawabanbchina2.setJawaban(jawabanUser);
+                                                                                                                                jawabanbchina2.simpanJawaban();
+                                                                                                                                jawabanbchina2.periksaJawaban(daftarUjian[i].getJawabanBenar());
+                                                                                                                                if (jawabanUser.equalsIgnoreCase(daftarUjian[i].getJawabanBenar())) 
+                                                                                                                                {
+                                                                                                                                        System.out.println("-> Benar!");
+                                                                                                                                        totalNilai += 50;
+                                                                                                                                } 
+                                                                                                                                else 
+                                                                                                                                {
+                                                                                                                                        System.out.println("-> Salah! (Jawaban benar: " + daftarUjian[i].getJawabanBenar() + ")");
+                                                                                                                                }
+                                                                                                                                System.out.println("Waktu menjawab: " + jawabanbchina1.getWaktuJawab());
+                                                                                                                                System.out.println("Waktu menjawab: " + jawabanbchina2.getWaktuJawab());
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println();
+                                                                                                                        }                                                                                
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println("                      REKAP NILAI AKHIR                    ");
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println("ID Mahasiswa   : " + Mahasiswa.getIdUser());
+                                                                                                                                System.out.println("Nama Mahasiswa : " + Mahasiswa.getNamaUser());
+                                                                                                                                System.out.println("Skor Diperoleh : " + nilaibchina.hitungNilai() + " / 100.0"); 
+                                                                                                                                System.out.println("Status Ujian   : " + (nilaibchina.getSkor() >= 70 ? "LULUS" : "REMEDIAL"));
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println();
 
-                                                                                                        System.out.println("===========================================================");
-                                                                                                        System.out.println("                REVIEW SOAL DAN KUNCI JAWABAN              ");
-                                                                                                        System.out.println("===========================================================");
-                                                                                                        for (int i = 0; i < daftarUjian.length; i++) 
-                                                                                                        {
-                                                                                                                System.out.println("Soal Nomor " + (i + 1));
-                                                                                                                System.out.println("Pertanyaan    : " + daftarUjian[i].getPertanyaan());
-                                                                                                                System.out.println("Jawaban Anda  : " + daftarJawaban[i].getJawaban() + 
-                                                                                                                                " (" + (daftarJawaban[i].isStatusBenar() ? "BENAR" : "SALAH") + ")");
-                                                                                                                System.out.println("Kunci Jawaban : " + daftarUjian[i].getJawabanBenar());
-                                                                                                                System.out.println("===========================================================");
-                                                                                                                System.out.println();
-                                                                                                        }
-                                                                                                        tesbinggris.tutupTes();
-                                                                                                        System.out.println("===========================================================");
-                                                                                                
-                                                                                                break;
-                                                                                        case 4: 
-                                                                                        
-                                                                                                break; 
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                System.out.println("                REVIEW SOAL DAN KUNCI JAWABAN              ");
+                                                                                                                                System.out.println("===========================================================");
+                                                                                                                                for (int i = 0; i < daftarUjian.length; i++) 
+                                                                                                                                {
+                                                                                                                                        System.out.println("Soal Nomor " + (i + 1));
+                                                                                                                                        System.out.println("Pertanyaan    : " + daftarUjian[i].getPertanyaan());
+                                                                                                                                        System.out.println("Jawaban Anda  : " + daftarJawaban[i].getJawaban() + 
+                                                                                                                                                        " (" + (daftarJawaban[i].isStatusBenar() ? "BENAR" : "SALAH") + ")");
+                                                                                                                                        System.out.println("Kunci Jawaban : " + daftarUjian[i].getJawabanBenar());
+                                                                                                                                        System.out.println("===========================================================");
+                                                                                                                                        System.out.println();
+                                                                                                                                }
+                                                                                                                                tesbinggris.tutupTes();
+                                                                                                                                System.out.println("==========================================================="); 
 
+                                                                                                                        break;
+                                                                                                                case 4: 
+                                                                                                                        List<Nilai> daftarnilaibchina = new ArrayList<>();
+                                                                                                                        daftarnilaibchina.add(nilaibchina); 
+                                                                                                                        sertifikatbchina.hitungNilai(daftarnilaibchina);
+                                                                                                                        sertifikatbchina.lihatNilai();
+                                                                                                                        break; 
+                                                                                                                case 5:
+                                                                                                                        chineseclass = true;
+                                                                                                                        break;
+                                                                                                                default: 
+                                                                                                                        System.out.println("Pilihan tidak valid!");
+                                                                                                                        System.out.println();                                                                                                        
+                                                                                                        }                                                                                                                                             
+                                                                                                }                                                                        
+                                                                                }
+                                                                        }
+                                                                        break;
+                                                        }   
+                                                }
 
-                                                                                }                                                     
-                                                                                        break;
-
-                                                                        case 2:
-
-                                                                                break;
-
-                                                                        case 3:
-
-                                                                }
-                                                        }
-                                                        break;
-                                        }   
+                                                break;
                                 }
-
-                                break;
-                    }
+                        }
                 }
         }
-
         input.close();
-
-
     }
 }

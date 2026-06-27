@@ -8,7 +8,8 @@ public class Sertifikat {
 
     private int idSertifikat;
     private int idUser;
-    private int idKelas;
+    private String namaUser;
+    private String namakelas;
     private double nilaiAkhir;
     private LocalDateTime tanggalTerbit;
     private String statusValidasi;
@@ -17,10 +18,11 @@ public class Sertifikat {
         this.statusValidasi = "Belum Tervalidasi";
     }
 
-    public Sertifikat(int idSertifikat, int idUser, int idKelas) {
+    public Sertifikat(int idSertifikat, int idUser, String namaUser, String namakelas) {
         this.idSertifikat = idSertifikat;
         this.idUser = idUser;
-        this.idKelas = idKelas;
+        this.namaUser = namaUser;
+        this.namakelas = namakelas;
         this.statusValidasi = "Belum Tervalidasi";
     }
 
@@ -34,8 +36,8 @@ public class Sertifikat {
         return idUser;
     }
 
-    public int getIdKelas() {
-        return idKelas;
+    public String getNamaKelas() {
+        return namakelas;
     }
 
     public double getNilaiAkhir() {
@@ -60,8 +62,8 @@ public class Sertifikat {
         this.idUser = idUser;
     }
 
-    public void setIdKelas(int idKelas) {
-        this.idKelas = idKelas;
+    public void setINamaKelas(String namakelas) {
+        this.namakelas = namakelas;
     }
 
     // ================= METHOD UML =================
@@ -70,7 +72,7 @@ public class Sertifikat {
 
         if (daftarNilai == null || daftarNilai.isEmpty()) {
             nilaiAkhir = 0;
-            statusValidasi = "Tidak Lulus";
+            statusValidasi = "TIDAK LULUS";
             return nilaiAkhir;
         }
 
@@ -84,10 +86,10 @@ public class Sertifikat {
         nilaiAkhir = total / daftarNilai.size();
 
         if (nilaiAkhir >= 70) {
-            statusValidasi = "Valid";
+            statusValidasi = "LULUS";
             tanggalTerbit = LocalDateTime.now();
         } else {
-            statusValidasi = "Tidak Lulus";
+            statusValidasi = "TIDAK LULUS";
         }
 
         return nilaiAkhir;
@@ -99,11 +101,13 @@ public class Sertifikat {
         System.out.println("=================================");
         System.out.println("ID Sertifikat   : " + idSertifikat);
         System.out.println("ID User         : " + idUser);
-        System.out.println("ID Kelas        : " + idKelas);
+        System.out.println("Nama User       : " + namaUser);
+        System.out.println("Nama Kelas      : " + namakelas);
         System.out.printf("Nilai Akhir     : %.2f%n", nilaiAkhir);
         System.out.println("Tanggal Terbit  : " + tanggalTerbit);
-        System.out.println("Status Validasi : " + statusValidasi);
+        System.out.println("Keterangan      : " + statusValidasi);
         System.out.println("=================================");
+        System.out.println();
     }
 
     @Override
@@ -111,7 +115,8 @@ public class Sertifikat {
         return "Sertifikat{" +
                 "idSertifikat=" + idSertifikat +
                 ", idUser=" + idUser +
-                ", idKelas=" + idKelas +
+                ", idUser=" + namaUser +                
+                ", namakelas=" + namakelas +
                 ", nilaiAkhir=" + nilaiAkhir +
                 ", statusValidasi='" + statusValidasi + '\'' +
                 '}';
